@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		font-family: 'Work Sans', sans-serif;
+	}
+
+	body {
+		@apply bg-white;
+	}
+
+	.material-symbols-outlined {
+		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+	}
+
+	.material-symbols-rounded {
+		font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+	}
+}
+
+@layer components {
+	/* Button */
+	.button {
+		@apply flex gap-3 py-3 px-6 rounded w-fit text-white transition-colors duration-300;
+	}
+
+	.button--primary {
+		@apply bg-primary;
+	}
+
+	.button--secondary {
+		@apply bg-tertiary;
+	}
+
+	.button--tertiary {
+		@apply bg-other;
+	}
+
+	.button--primary--border {
+		@apply border-solid border-2 border-primary text-primary;
+	}
+
+	.button--secondary--border {
+		@apply border-solid border-2 border-tertiary text-tertiary;
+	}
+
+	.button--tertiary--border {
+		@apply border-solid border-2 border-other text-other;
+	}
+
+	.button--primary:hover,
+	.button--secondary:hover,
+	.button--tertiary:hover {
+		@apply bg-opacity-90;
+	}
+
+	.button--primary--border:hover {
+		@apply bg-primary bg-opacity-90 text-white;
+	}
+
+	.button--secondary--border:hover {
+		@apply bg-tertiary bg-opacity-90 text-white;
+	}
+
+	.button--tertiary--border:hover {
+		@apply bg-other bg-opacity-90 text-white;
+	}
+
+	/* Nav links */
+	.nav__link {
+		@apply hover:text-other transition-all duration-150;
+	}
+
+	.nav__link--mobile {
+		@apply hover:text-white hover:bg-other rounded-l-full hover:px-6 py-3;
+	}
+
+	.nav__link[aria-current] {
+		@apply text-other;
+	}
+
+	.nav__link--mobile[aria-current] {
+		@apply text-white bg-other px-6;
+	}
+
+	/* nav show */
+	#nav-menu.show {
+		@apply max-w-3xl pl-4 xs:pl-6;
+	}
+
+	/* Nav button */
+	button[aria-expanded='true'] span:nth-child(1) {
+		@apply animate-top bg-white;
+	}
+	button[aria-expanded='false'] span:nth-child(1) {
+		@apply animate-top-2 bg-other;
+	}
+	button[aria-expanded='true'] span:nth-child(2) {
+		@apply animate-zoom-out bg-other;
+	}
+	button[aria-expanded='false'] span:nth-child(2) {
+		@apply animate-zoom-in bg-white;
+	}
+	button[aria-expanded='true'] span:nth-child(3) {
+		@apply animate-bottom bg-white;
+	}
+	button[aria-expanded='false'] span:nth-child(3) {
+		@apply animate-bottom-2 bg-other;
+	}
+}
+
+@layer utilities {
+	.logo {
+		font-family: 'Exo', sans-serif;
+		@apply text-2xl xs:text-3xl md:text-4xl text-other;
+	}
+
+	.nav_shadow {
+		box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+	}
+}

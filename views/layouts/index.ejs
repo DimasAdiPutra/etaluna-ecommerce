@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title><%= title %></title>
+
+		<!-- Menambahkan file css untuk halaman spesifik -->
+		<%- style %>
+
+		<!-- Include style utama yang di gunakan di semua website -->
+		<%- include('../partials/styles.ejs') %>
+	</head>
+
+	<body>
+		<%- include('nav') %>
+
+		<%- body %>
+
+		<!-- menambahkan file js untuk halaman spesifik -->
+		<%- script %>
+
+		<!-- Include script utama yang digunakan di semua website -->
+		<%- include('../partials/scripts.ejs') %>
+	</body>
+
+</html>

@@ -1,0 +1,14 @@
+<main class="container m-auto min-h-screen flex flex-col <%= env === 'development' ? '' : 'items-center' %> justify-center">
+	<div class="w-4/5 mb-4 max-w-2xl">
+		<img class="w-full" src="<%= url %>/images/errors/back-home.svg" alt="404 Illustration">
+	</div>
+
+	<h1 class="w-fit"><%= `${error.status} ${error.message}` %></h1>
+	<% if (env === 'development') { %>
+	<pre><%= error.stack %> </pre>
+	<% } else { %>
+	<p>Please return to the <a href="/" class="text-primary">Home Page</a></p>
+	<% } %>
+
+	<a href="/" class="button button--primary mt-3">Back to Home</a>
+</main>
