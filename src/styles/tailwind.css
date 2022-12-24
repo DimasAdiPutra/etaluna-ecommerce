@@ -114,7 +114,7 @@
 @layer utilities {
 	.logo {
 		font-family: 'Exo', sans-serif;
-		@apply text-2xl xs:text-3xl md:text-4xl text-other;
+		@apply text-2xl xs:text-3xl md:text-4xl text-other font-semibold;
 	}
 
 	.nav_shadow {
