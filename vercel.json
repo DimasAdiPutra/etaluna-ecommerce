@@ -15,9 +15,10 @@
       "dest": "/"
     }
   ],
-  "functions": {
-    "/*.js": {
-      "runtime": "nodejs"
+  "builds": [
+    {
+      "src": "./app.js",
+      "use": "@vercel/node"
     }
-  }
+  ]
 }
