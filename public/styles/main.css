@@ -1084,7 +1084,6 @@ button[aria-expanded='false'] span:nth-child(3) {
   font-family: 'Exo', sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(238 184 104 / var(--tw-text-opacity));
 }
