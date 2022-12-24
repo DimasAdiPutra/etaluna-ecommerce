@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm ./bin/www -e js,ejs,mjs,cjs,json",
+    "start": "npm ./bin/www",
     "build": "npx tailwindcss -i ./src/styles/tailwind.css -o ./public/styles/main.css --watch"
   },
   "dependencies": {
