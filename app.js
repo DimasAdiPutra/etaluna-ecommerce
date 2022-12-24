@@ -25,15 +25,6 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', (req, res, next) => {
-	const fullUrl = req.protocol + '://' + req.get('host')
-	const currentPage = req.originalUrl.split('/')[1]
-
-	req.myUrl = { fullUrl, currentPage }
-
-	next()
-})
-
 app.use('/', homeRouter)
 
 // catch 404 and forward to error handler
@@ -46,12 +37,14 @@ app.use(function (err, req, res, next) {
 	// set locals, only providing error in development
 	res.locals.error = err
 
+	const fullUrl = req.protocol + '://' + req.get('host')
+
 	// render the error page
 	res.status(err.status || 500)
 	res.render('error', {
 		title: `${err.status} ${err.message}`,
 		env: req.app.get('env'),
-		url: { ...req.myUrl },
+		url: fullUrl,
 	})
 })
 
