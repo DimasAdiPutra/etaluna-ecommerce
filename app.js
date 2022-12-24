@@ -6,6 +6,7 @@ const expressEjsLayouts = require('express-ejs-layouts')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
+const cors = require('cors')
 
 const homeRouter = require('./routes/home')
 
@@ -20,6 +21,7 @@ app.set('layout extractScripts', true)
 app.set('layout extractStyles', true)
 
 app.use(logger('dev'))
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
