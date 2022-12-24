@@ -1,0 +1,200 @@
+@font-face {
+    font-family: 'Lora';
+    src: local('Lora Regular'), local('Lora-Regular'),
+        url('Lora-Regular.woff2') format('woff2'),
+        url('Lora-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: local('Lora Italic'), local('Lora-Italic'),
+        url('Lora-Italic.woff2') format('woff2'),
+        url('Lora-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: local('Exo Italic'), local('Exo-Italic'),
+        url('Exo-Italic.woff2') format('woff2'),
+        url('Exo-Italic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: local('Exo Regular'), local('Exo-Regular'),
+        url('Exo-Regular.woff2') format('woff2'),
+        url('Exo-Regular.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans Italic'), local('WorkSans-Italic'),
+        url('WorkSans-Italic.woff2') format('woff2'),
+        url('WorkSans-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans Regular'), local('WorkSans-Regular'),
+        url('WorkSans-Regular.woff2') format('woff2'),
+        url('WorkSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: local('Exo SemiBold'), local('Exo-SemiBold'),
+        url('Exo-SemiBold.woff2') format('woff2'),
+        url('Exo-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: local('Lora Medium'), local('Lora-Medium'),
+        url('Lora-Medium.woff2') format('woff2'),
+        url('Lora-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: local('Lora Bold'), local('Lora-Bold'),
+        url('Lora-Bold.woff2') format('woff2'),
+        url('Lora-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: local('Lora Italic'), local('Lora-Italic'),
+        url('Lora-Italic.woff2') format('woff2'),
+        url('Lora-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: local('Lora Regular'), local('Lora-Regular'),
+        url('Lora-Regular.woff2') format('woff2'),
+        url('Lora-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: local('Lora SemiBold'), local('Lora-SemiBold'),
+        url('Lora-SemiBold.woff2') format('woff2'),
+        url('Lora-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: local('Lora Medium Italic'), local('Lora-MediumItalic'),
+        url('Lora-MediumItalic.woff2') format('woff2'),
+        url('Lora-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans Italic'), local('WorkSans-Italic'),
+        url('WorkSans-Italic.woff2') format('woff2'),
+        url('WorkSans-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans Bold'), local('WorkSans-Bold'),
+        url('WorkSans-Bold.woff2') format('woff2'),
+        url('WorkSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans Light'), local('WorkSans-Light'),
+        url('WorkSans-Light.woff2') format('woff2'),
+        url('WorkSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans Medium'), local('WorkSans-Medium'),
+        url('WorkSans-Medium.woff2') format('woff2'),
+        url('WorkSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans Regular'), local('WorkSans-Regular'),
+        url('WorkSans-Regular.woff2') format('woff2'),
+        url('WorkSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans Light Italic'), local('WorkSans-LightItalic'),
+        url('WorkSans-LightItalic.woff2') format('woff2'),
+        url('WorkSans-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans SemiBold'), local('WorkSans-SemiBold'),
+        url('WorkSans-SemiBold.woff2') format('woff2'),
+        url('WorkSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
