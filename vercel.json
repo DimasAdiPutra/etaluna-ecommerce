@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "build": {
+    "env": {
+      "NODE_ENV": "development"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "s-max-age=1, stale-while-revalidate"
+      },
+      "dest": "/"
+    }
+  ],
+  "functions": {
+    "/*.js": {
+      "runtime": "nodejs"
+    }
+  }
+}
