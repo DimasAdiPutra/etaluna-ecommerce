@@ -1,9 +1,11 @@
 {
   "version": 2,
+  "devCommand": "npm start",
   "build": {
     "env": {
       "NODE_ENV": "development"
-    }
+    },
+    "command": "npm start"
   },
   "routes": [
     {
