@@ -1,7 +1,5 @@
 const getHome = (req, res, next) => {
-	const fullUrl = req.protocol + '://' + req.get('host')
-
-	res.render('home', { title: 'Home Page', url: fullUrl })
+	res.render('home', { title: 'Home Page', currentPage: req.currentPage })
 }
 
 module.exports = { getHome }
