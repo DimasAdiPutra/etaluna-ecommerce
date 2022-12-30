@@ -39,15 +39,15 @@
 	}
 
 	.button--primary--border {
-		@apply border-solid border-2 border-primary text-primary;
+		@apply outline outline-2 -outline-offset-2 outline-primary text-primary;
 	}
 
 	.button--secondary--border {
-		@apply border-solid border-2 border-tertiary text-tertiary;
+		@apply outline outline-2 -outline-offset-2 outline-tertiary text-tertiary;
 	}
 
 	.button--tertiary--border {
-		@apply border-solid border-2 border-other text-other;
+		@apply outline outline-2 -outline-offset-2 outline-other text-other;
 	}
 
 	.button--primary:hover,
@@ -87,7 +87,7 @@
 
 	/* nav show */
 	#nav-menu.show {
-		@apply max-w-3xl pl-4 xs:pl-6;
+		@apply max-w-xs pl-4 xs:pl-6;
 	}
 
 	/* Nav button */
