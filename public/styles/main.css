@@ -1137,6 +1137,10 @@ button[aria-expanded='false'] span:nth-child(3) {
   .lg\:flex {
     display: flex;
   }
+
+  .lg\:hidden {
+    display: none;
+  }
 }
 
 @media (min-width: 1280px) {
