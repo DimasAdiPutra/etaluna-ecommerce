@@ -109,6 +109,15 @@
 	button[aria-expanded='false'] span:nth-child(3) {
 		@apply animate-bottom-2 bg-other;
 	}
+
+	/* Form input */
+	.form__input {
+		@apply form-input block w-full px-3 py-1.5 text-base font-normal text-black bg-white bg-clip-padding rounded transition ease-in-out duration-300 m-0 focus:text-black focus:bg-white focus:border-primary focus:outline-none;
+	}
+
+	.form__input--border {
+		@apply border border-solid border-black;
+	}
 }
 
 @layer utilities {
