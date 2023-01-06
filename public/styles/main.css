@@ -1318,6 +1318,10 @@ button[aria-expanded='false'] span:nth-child(3) {
   flex-wrap: wrap;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
@@ -1593,7 +1597,15 @@ button[aria-expanded='false'] span:nth-child(3) {
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
+  .xs\:flex-row {
+    flex-direction: row;
+  }
+
   .xs\:justify-between {
     justify-content: space-between;
+  }
+
+  .xs\:self-end {
+    align-self: flex-end;
   }
 }
