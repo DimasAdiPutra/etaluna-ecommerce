@@ -3,6 +3,9 @@ module.exports = {
 	content: ['./views/**/*.{html,js,ejs}', './public/javascripts/*.js'],
 	theme: {
 		extend: {
+			height: {
+				'full-screen': 'calc(100vh - 80px)'
+			},
 			keyframes: {
 				top: {
 					'0%': { top: '0', transform: 'rotate(0)' },
@@ -43,7 +46,7 @@ module.exports = {
 				'bottom-2': 'ease .7s bottom-2 forwards',
 			},
 			screens: {
-				xs: { min: '375px', max: '767px' },
+				xs: { min: '375px' },
 			},
 		},
 		colors: {

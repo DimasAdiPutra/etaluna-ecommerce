@@ -112,7 +112,7 @@
 
 	/* Form input */
 	.form__input {
-		@apply form-input block w-full px-3 py-1.5 text-base font-normal text-black bg-white bg-clip-padding rounded transition ease-in-out duration-300 m-0 focus:text-black focus:bg-white focus:border-primary focus:outline-none;
+		@apply form-input block w-full px-3 py-1.5 text-base font-normal text-black bg-white bg-clip-padding rounded border-none outline-none transition ease-in-out duration-300 m-0 focus:text-black focus:bg-white focus:border-primary focus:outline-none;
 	}
 
 	.form__input--border {
@@ -124,6 +124,15 @@
 	.logo {
 		font-family: 'Exo', sans-serif;
 		@apply text-2xl xs:text-3xl md:text-4xl text-other;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'Lora', sans-serif;
 	}
 
 	.nav_shadow {
