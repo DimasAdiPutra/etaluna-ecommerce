@@ -138,4 +138,13 @@
 	.nav_shadow {
 		box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
 	}
+
+	.shadow-card {
+		box-shadow: 1.5px 1.3px 4.2px rgba(0, 0, 0, 0.01),
+			4.3px 3.8px 10.1px rgba(0, 0, 0, 0.018),
+			9.2px 8.1px 19px rgba(0, 0, 0, 0.025),
+			17.8px 15.7px 34px rgba(0, 0, 0, 0.031),
+			34.2px 30.3px 63.5px rgba(0, 0, 0, 0.039),
+			79px 70px 152px rgba(0, 0, 0, 0.05);
+	}
 }
