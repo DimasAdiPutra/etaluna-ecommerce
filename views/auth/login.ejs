@@ -1,20 +1,20 @@
 <div class="container flex w-full justify-center md:h-full-screen md:items-center">
-	<form class="flex flex-col w-full max-w-sm xl:max-w-md md:shadow-card pb-10 pt-8 px-6 md:bg-other md:rounded-lg" method="post" action="/auth/login">
+	<form id="mainForm" class="flex flex-col w-full max-w-sm xl:max-w-md md:shadow-card pb-10 pt-8 px-6 md:bg-other md:rounded-lg" method="post" action="/auth/login">
 		<h1 class="mb-6 text-4xl">Login Page</h1>
 		<div class="form-group mb-6">
 			<label for="email" class="form-label inline-block mb-2 text-gray-700">Email :</label>
-			<input type="email" class="form__input form__input--border form__input--primary" id="email" aria-describedby="emailHelp" placeholder="example@example.com">
+			<input type="email" class="form__input form__input--border form__input--primary" id="email" name="email" aria-describedby="emailHelp" placeholder="example@example.com">
 		</div>
 		<div class="form-group mb-6">
 			<label for="password" class="form-label inline-block mb-2 text-gray-700">Password :</label>
-			<input type="password" class="form__input form__input--border form__input--primary" id="password" placeholder="Enter your password here...">
+			<input type="password" class="form__input form__input--border form__input--primary" id="password" name="password" placeholder="Enter your password here...">
 		</div>
 		<div class="flex flex-col xs:flex-row xs:justify-between xs:items-center gap-2 mb-6">
 			<div class="form-group form-check">
-				<input type="checkbox" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-text-primary checked:border-text-primary focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" id="remember">
+				<input type="checkbox" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-text-primary checked:border-text-primary focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" id="remember" name="remember">
 				<label class="form-check-label inline-block text-gray-800" for="remember">Remember me</label>
 			</div>
-			<button type="submit" class="button button--primary self-end">Sign in</button>
+			<button type="submit" id="formButton" class="button button--primary self-end">Sign in</button>
 		</div>
 		<a href="/auth/forget" class="self-end text-primary hover:text-secondary focus:text-secondary transition duration-200 ease-in-out">Forgot password?</a>
 		<p class="text-gray-800 mt-6 text-center">Not a member? <a href="/register" class="text-primary hover:text-secondary focus:text-secondary transition duration-200 ease-in-out">Register</a>

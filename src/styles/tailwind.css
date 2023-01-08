@@ -23,7 +23,7 @@
 @layer components {
 	/* Button */
 	.button {
-		@apply flex gap-3 py-3 px-6 rounded w-fit text-white transition-colors duration-300;
+		@apply flex gap-3 py-3 px-6 rounded w-fit text-white transition-colors duration-300 disabled:bg-black;
 	}
 
 	.button--primary {
@@ -146,5 +146,14 @@
 			17.8px 15.7px 34px rgba(0, 0, 0, 0.031),
 			34.2px 30.3px 63.5px rgba(0, 0, 0, 0.039),
 			79px 70px 152px rgba(0, 0, 0, 0.05);
+	}
+
+	/* form */
+	.invalid {
+		@apply border-tertiary;
+	}
+
+	.error {
+		@apply text-xs text-tertiary;
 	}
 }

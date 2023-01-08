@@ -56,7 +56,8 @@ app.use(function (err, req, res, next) {
 	res.render('error', {
 		title: `${err.status} ${err.message}`,
 		env: req.app.get('env'),
-		currentPage: req.currentPage
+		currentPage: req.currentPage,
+		form: false
 	})
 })
 

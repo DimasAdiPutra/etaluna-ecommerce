@@ -814,6 +814,11 @@ body {
   transition-duration: 300ms;
 }
 
+.button:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(27 27 27 / var(--tw-bg-opacity));
+}
+
 .button--primary {
   --tw-bg-opacity: 1;
   background-color: rgb(55 113 142 / var(--tw-bg-opacity));
@@ -1455,6 +1460,10 @@ button[aria-expanded='false'] span:nth-child(3) {
   font-weight: 700;
 }
 
+.lowercase {
+  text-transform: lowercase;
+}
+
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(55 113 142 / var(--tw-text-opacity));
@@ -1541,6 +1550,20 @@ h1,
   box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* form */
+
+.invalid {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 118 122 / var(--tw-border-opacity));
+}
+
+.error {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(239 118 122 / var(--tw-text-opacity));
+}
+
 .hover\:border-other:hover {
   --tw-border-opacity: 1;
   border-color: rgb(238 184 104 / var(--tw-border-opacity));
@@ -1582,12 +1605,6 @@ h1,
   .md\:bg-other {
     --tw-bg-opacity: 1;
     background-color: rgb(238 184 104 / var(--tw-bg-opacity));
-  }
-
-  .md\:shadow-lg {
-    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
   .md\:shadow-card {

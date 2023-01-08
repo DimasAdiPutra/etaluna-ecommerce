@@ -1,9 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { getRegister } = require('../controllers/auth')
-
-/* GET home page. */
+/* jika membuka halaman utama auth, maka alihkan ke halaman login */
 router.get('/', (req, res, next) => {
   res.redirect('/login')
 })
