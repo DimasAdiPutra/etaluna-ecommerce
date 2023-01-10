@@ -6,17 +6,25 @@
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" async></script>
 
 <!-- Main Css -->
+<% if (mode === 'development') { %>
 <link rel="preload" href="/styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<% } else { %>
+<link rel="preload" href="/styles/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<% } %>
 
 <!-- Jika tidak bisa menjalankan script gunakan link di bawah ini untuk merender css secara default tanpa asyncronous -->
 <noscript>
-<!-- Google fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:wght@600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap">
+	<!-- Google fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:wght@600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap">
 
 	<!-- Google Icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
 
 	<!-- Main Css -->
+	<% if (mode === 'development') { %>
 	<link rel="stylesheet" href="/styles/main.css">
+	<% } else { %>
+	<link rel="stylesheet" href="/styles/main.min.css">
+	<% } %>
 </noscript>

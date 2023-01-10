@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www -e js,ejs,mjs,cjs,json",
-    "build": "npx tailwindcss -i ./src/styles/tailwind.css -o ./public/styles/main.css",
-    "build-dev": "npx tailwindcss -i ./src/styles/tailwind.css -o ./public/styles/main.css --watch"
+    "build": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.min.css --minify",
+    "build-dev": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.css --watch"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -21,7 +21,9 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@tailwindcss/forms": "^0.5.3",
+    "cssnano": "^5.1.14",
     "nodemon": "^2.0.20",
     "tailwindcss": "^3.2.4"
   }

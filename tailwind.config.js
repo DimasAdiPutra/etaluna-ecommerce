@@ -68,6 +68,13 @@ module.exports = {
 		},
 	},
 	plugins: [
-		require('@tailwindcss/forms')
+		require('@tailwindcss/forms'),
+		require('cssnano')({
+			preset: 'default',
+			discardComments: { removeAll: true },
+			minifyFontValues: { removeQuotes: false },
+			minifyGradients: true,
+			minifySelectors: true
+		}),
 	],
 }

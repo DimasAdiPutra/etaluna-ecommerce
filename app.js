@@ -32,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', (req, res, next) => {
 	req.currentPage = req.originalUrl.split('/')[1]
+	req.mode = process.env.NODE_ENV
 
 	next()
 })
@@ -57,7 +58,8 @@ app.use(function (err, req, res, next) {
 		title: `${err.status} ${err.message}`,
 		env: req.app.get('env'),
 		currentPage: req.currentPage,
-		form: false
+		form: false,
+		mode: req.mode
 	})
 })
 
