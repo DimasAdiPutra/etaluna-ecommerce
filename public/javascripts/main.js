@@ -28,13 +28,3 @@ document.addEventListener('focusin', e => {
 		}
 	}
 })
-
-document.addEventListener('mousedown', e => {
-	if (e.target !== nav && !nav.contains(e.target)) {
-		button.ariaExpanded = 'false'
-		nav.classList.remove('show')
-		for (const child of navChildren) {
-			child.setAttribute('tabindex', '-1')
-		}
-	}
-})
