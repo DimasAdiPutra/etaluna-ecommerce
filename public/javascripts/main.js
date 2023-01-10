@@ -20,7 +20,7 @@ button.addEventListener('click', () => {
 })
 
 document.addEventListener('focusin', e => {
-	if (e.target !== nav && !nav.contains(e.target)) {
+	if (e.target !== nav && !nav.contains(e.target) && e.target !== button) {
 		button.ariaExpanded = 'false'
 		nav.classList.remove('show')
 		for (const child of navChildren) {
