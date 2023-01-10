@@ -594,8 +594,11 @@ body {
   background-color: rgb(252 255 253 / var(--tw-bg-opacity));
 }
 
-.material-symbols-rounded {
-  font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+.icons {
+  width: 1.25rem;
+  stroke: #1B1B1B;
+  --tw-text-opacity: 1;
+  color: rgb(27 27 27 / var(--tw-text-opacity));
 }
 
 *, ::before, ::after {
@@ -1477,6 +1480,10 @@ button[aria-expanded='false'] span:nth-child(3) {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(27 27 27 / var(--tw-text-opacity));
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .shadow-sm {

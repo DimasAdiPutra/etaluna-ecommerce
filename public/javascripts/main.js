@@ -28,3 +28,10 @@ document.addEventListener('focusin', e => {
 		}
 	}
 })
+
+// Menjalankan feather icons
+feather.replace({
+	class: 'icons'
+	// color: '#1B1B1B',
+	// width: '16px',
+})
