@@ -7,7 +7,6 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const cors = require('cors')
-const compression = require('compression')
 
 const homeRouter = require('./routes/home')
 const loginRouter = require('./routes/login')
