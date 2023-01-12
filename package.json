@@ -4,8 +4,8 @@
   "main": "app.js",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www -e js,ejs,mjs,cjs,json",
+    "start": "gulp && node ./bin/www",
+    "dev": "gulp && nodemon ./bin/www -e js,ejs,mjs,cjs,json",
     "build": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.min.css --minify",
     "build-dev": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.css --watch"
   },
@@ -27,7 +27,7 @@
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@tailwindcss/forms": "^0.5.3",
     "cssnano": "^5.1.14",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.0.0",
     "gulp-sourcemaps": "^3.0.0",
