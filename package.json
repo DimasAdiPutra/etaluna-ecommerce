@@ -4,10 +4,10 @@
   "main": "app.js",
   "private": true,
   "scripts": {
-    "start": "gulp && node ./bin/www",
-    "dev": "gulp && nodemon ./bin/www -e js,ejs,mjs,cjs,json",
-    "build": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.min.css --minify",
-    "build-dev": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.css --watch"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www -e js,ejs,mjs,cjs,json",
+    "build": "gulp && npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.min.css --minify",
+    "build-dev": "gulp && npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.css --watch"
   },
   "dependencies": {
     "compression": "^1.0.8",
@@ -21,13 +21,13 @@
     "fs": "^0.0.1-security",
     "http-errors": "~1.6.3",
     "morgan": "^1.3.2",
-    "terser": "^5.16.1",
-    "gulp": "^4.0.2"
+    "terser": "^5.16.1"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@tailwindcss/forms": "^0.5.3",
     "cssnano": "^5.1.14",
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.0.0",
     "gulp-sourcemaps": "^3.0.0",
