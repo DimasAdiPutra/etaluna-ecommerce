@@ -7,6 +7,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const cors = require('cors')
+const compression = require('compression')
 
 const homeRouter = require('./routes/home')
 const loginRouter = require('./routes/login')
@@ -14,6 +15,7 @@ const registerRouter = require('./routes/register')
 const authRouter = require('./routes/auth')
 
 const app = express()
+app.use(compression())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -59,7 +61,7 @@ app.use(function (err, req, res, next) {
 		env: req.app.get('env'),
 		currentPage: req.currentPage,
 		form: false,
-		mode: req.mode
+		mode: req.mode,
 	})
 })
 

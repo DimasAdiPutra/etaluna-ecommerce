@@ -10,7 +10,7 @@
     "build-dev": "gulp && npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.css --watch"
   },
   "dependencies": {
-    "compression": "^1.0.8",
+    "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
