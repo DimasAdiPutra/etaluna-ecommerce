@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const cors = require('cors')
 const compression = require('compression')
+const zlib = require('zlib')
 
 const homeRouter = require('./routes/home')
 const loginRouter = require('./routes/login')
@@ -15,7 +16,7 @@ const registerRouter = require('./routes/register')
 const authRouter = require('./routes/auth')
 
 const app = express()
-app.use(compression())
+app.use(compression({ strategy: zlib.RLE }))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
