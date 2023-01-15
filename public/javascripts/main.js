@@ -107,4 +107,3 @@ if (document.getElementById('firstName')) {
 validation.onSuccess(() => {
   document.getElementById('mainForm').submit()
 })
-//# sourceMappingURL=main.js.map

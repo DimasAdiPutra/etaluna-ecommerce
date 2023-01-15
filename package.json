@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www -e js,ejs,mjs,cjs,json",
-    "build": "gulp && npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.min.css --minify",
-    "build-dev": "gulp && npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.css --watch"
+    "build": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.min.css --minify",
+    "build-dev": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.css --watch",
+    "gulp": "npx gulp --watch"
   },
   "dependencies": {
     "compression": "^1.7.4",
