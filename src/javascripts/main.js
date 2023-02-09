@@ -17,6 +17,7 @@ button.addEventListener('click', () => {
 			child.removeAttribute('tabindex')
 		}
 	}
+	console.log('button click nav');
 })
 
 document.addEventListener('focusin', e => {
@@ -35,3 +36,5 @@ feather.replace({
 	// color: '#1B1B1B',
 	// width: '16px',
 })
+
+console.log('main.js');

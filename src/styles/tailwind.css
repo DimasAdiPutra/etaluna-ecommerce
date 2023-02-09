@@ -82,7 +82,7 @@
 	}
 
 	/* nav show */
-	#nav-menu.show {
+	#nav-menu.hidden {
 		@apply max-w-xs pl-4 xs:pl-6;
 	}
 
