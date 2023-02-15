@@ -1,3 +1,6 @@
+// Import icons
+const feather = require('feather-icons')
+
 const button = document.getElementById('nav-button')
 const nav = document.getElementById('nav-menu')
 
@@ -17,10 +20,9 @@ button.addEventListener('click', () => {
 			child.removeAttribute('tabindex')
 		}
 	}
-	console.log('button click nav');
 })
 
-document.addEventListener('focusin', e => {
+document.addEventListener('focusin', (e) => {
 	if (e.target !== nav && !nav.contains(e.target) && e.target !== button) {
 		button.ariaExpanded = 'false'
 		nav.classList.remove('show')
@@ -32,9 +34,7 @@ document.addEventListener('focusin', e => {
 
 // Menjalankan feather icons
 feather.replace({
-	class: 'icons'
+	class: 'icons',
 	// color: '#1B1B1B',
 	// width: '16px',
 })
-
-console.log('main.js');

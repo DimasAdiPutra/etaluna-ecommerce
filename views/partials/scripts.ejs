@@ -1,8 +1,5 @@
-<% if (form) { %>
-<script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
-<!-- <script src="/javascripts/form.js" defer></script> -->
-<% } %> <% if (mode === 'development') { %>
-<script src="/main.js"></script>
+<% if (mode === 'development') { %>
+<script src="/main.js" defer></script>
 <% } else { %>
-<script src="/main.min.js"></script>
+<script src="/main.min.js" defer></script>
 <% } %>
