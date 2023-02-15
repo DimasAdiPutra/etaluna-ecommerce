@@ -1,13 +1,14 @@
 {
   "name": "etaluna-ecommerce",
-  "version": "0.0.0",
-  "main": "app.js",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www -e js,ejs,mjs,cjs,json",
-    "build": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.min.css --minify",
-    "build-dev": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/main.css --watch"
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -17,14 +18,28 @@
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
+    "feather-icons": "^4.29.0",
     "http-errors": "~1.6.3",
+    "just-validate": "^4.2.0",
     "morgan": "~1.9.1"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@tailwindcss/forms": "^0.5.3",
+    "@webpack-cli/generators": "^3.0.1",
+    "autoprefixer": "^10.4.13",
+    "css-loader": "^6.7.3",
     "cssnano": "^5.1.14",
+    "mini-css-extract-plugin": "^2.7.2",
     "nodemon": "^2.0.20",
-    "tailwindcss": "^3.2.4"
-  }
+    "postcss": "^8.4.21",
+    "postcss-loader": "^7.0.2",
+    "postcss-preset-env": "^8.0.1",
+    "prettier": "^2.8.3",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.2.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "description": "Project portfolio ecommerce dengna express js, ejs dan tailwind css"
 }

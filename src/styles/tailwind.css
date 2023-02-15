@@ -81,11 +81,6 @@
 		@apply text-white bg-other px-6;
 	}
 
-	/* nav show */
-	#nav-menu.show {
-		@apply max-w-xs pl-4 xs:pl-6;
-	}
-
 	/* Nav button */
 	button[aria-expanded='true'] span:nth-child(1) {
 		@apply animate-top bg-white;
@@ -151,5 +146,10 @@
 
 	.error {
 		@apply text-xs text-tertiary;
+	}
+
+	/* Nav show */
+	.show {
+		@apply max-w-xs pl-4 xs:pl-6;
 	}
 }

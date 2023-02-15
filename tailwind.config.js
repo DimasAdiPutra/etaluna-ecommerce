@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./views/**/*.{html,js,ejs}', './public/javascripts/*.js'],
+	content: [
+		'./views/**/*.{html,js,ejs}',
+		'./public/javascripts/*.js',
+		'./src/**/*.{js,css}',
+	],
 	theme: {
 		extend: {
 			height: {
-				'full-screen': 'calc(100vh - 80px)'
+				'full-screen': 'calc(100vh - 80px)',
 			},
 			keyframes: {
 				top: {
@@ -67,14 +71,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [
-		require('@tailwindcss/forms'),
-		require('cssnano')({
-			preset: 'default',
-			discardComments: { removeAll: true },
-			minifyFontValues: { removeQuotes: false },
-			minifyGradients: true,
-			minifySelectors: true
-		}),
-	],
+	plugins: [require('@tailwindcss/forms')],
 }
