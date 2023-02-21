@@ -46,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// require images\n__webpack_require__(/*! ./images/errors/back-home.svg */ \"./src/images/errors/back-home.svg\")\n\n// require css\n__webpack_require__(/*! ./styles/tailwind.css */ \"./src/styles/tailwind.css\")\n\n// require js\n__webpack_require__(/*! ./javascripts/main */ \"./src/javascripts/main.js\")\n__webpack_require__(/*! ./javascripts/form */ \"./src/javascripts/form.js\")\n\n\n//# sourceURL=webpack://etaluna-ecommerce/./src/index.js?");
+eval("// require images\r\n__webpack_require__(/*! ./images/errors/back-home.svg */ \"./src/images/errors/back-home.svg\")\r\n\r\n// require css\r\n__webpack_require__(/*! ./styles/tailwind.css */ \"./src/styles/tailwind.css\")\r\n\r\n// require js\r\n__webpack_require__(/*! ./javascripts/main */ \"./src/javascripts/main.js\")\r\n__webpack_require__(/*! ./javascripts/form */ \"./src/javascripts/form.js\")\r\n\n\n//# sourceURL=webpack://etaluna-ecommerce/./src/index.js?");
 
 /***/ }),
 
