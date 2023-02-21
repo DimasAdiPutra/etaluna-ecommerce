@@ -2,7 +2,7 @@
 
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const isProduction = process.env.NODE_ENV == 'production'
 
@@ -16,11 +16,27 @@ const config = {
 		assetModuleFilename: 'images/[name][ext]',
 	},
 	optimization: {
-    minimizer: [
-      `...`,
-      new CssMinimizerPlugin(),
-    ],
-  },
+		minimizer: [
+			`...`,
+			new CssMinimizerPlugin({
+				minimizerOptions: {
+					preset: [
+						require.resolve('cssnano-preset-advanced'),
+						{
+							discardComments: { removeAll: true },
+							discardUnused: true,
+							discardDuplicates: true,
+							minifyFontValues: { removeQuotes: false },
+							minifyGradients: true,
+							minifySelectors: true,
+							discardEmpty: true,
+						},
+					],
+				},
+				minify: [CssMinimizerPlugin.cssnanoMinify],
+			}),
+		],
+	},
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: isProduction ? 'main.min.css' : 'main.css',
@@ -33,7 +49,7 @@ const config = {
 		rules: [
 			{
 				test: /\.css$/i,
-        include: path.resolve(__dirname, 'src'),
+				include: path.resolve(__dirname, 'src'),
 				use: [stylesHandler, 'css-loader', 'postcss-loader'],
 			},
 			{
