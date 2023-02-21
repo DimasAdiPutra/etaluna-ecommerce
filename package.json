@@ -29,6 +29,7 @@
     "@webpack-cli/generators": "^3.0.1",
     "autoprefixer": "^10.4.13",
     "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "cssnano": "^5.1.14",
     "mini-css-extract-plugin": "^2.7.2",
     "nodemon": "^2.0.20",

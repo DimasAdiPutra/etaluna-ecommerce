@@ -2,6 +2,7 @@
 
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == 'production'
 
@@ -14,6 +15,12 @@ const config = {
 		filename: isProduction ? 'main.min.js' : 'main.js',
 		assetModuleFilename: 'images/[name][ext]',
 	},
+	optimization: {
+    minimizer: [
+      `...`,
+      new CssMinimizerPlugin(),
+    ],
+  },
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: isProduction ? 'main.min.css' : 'main.css',
