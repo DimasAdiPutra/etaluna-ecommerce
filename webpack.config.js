@@ -3,6 +3,7 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 
 const isProduction = process.env.NODE_ENV == 'production'
 
@@ -13,7 +14,7 @@ const config = {
 	output: {
 		path: path.resolve(__dirname, 'public'),
 		filename: isProduction ? 'main.min.js' : 'main.js',
-		assetModuleFilename: 'images/[name][ext]',
+		assetModuleFilename: `images/[name][ext]`,
 	},
 	optimization: {
 		minimizer: [
@@ -24,16 +25,53 @@ const config = {
 						require.resolve('cssnano-preset-advanced'),
 						{
 							discardComments: { removeAll: true },
-							discardUnused: true,
-							discardDuplicates: true,
+							discardUnused: { removeAll: true },
+							discardDuplicates: { removeAll: true },
+							discardEmpty: true,
 							minifyFontValues: { removeQuotes: false },
 							minifyGradients: true,
 							minifySelectors: true,
-							discardEmpty: true,
 						},
 					],
 				},
-				minify: [CssMinimizerPlugin.cssnanoMinify],
+			}),
+
+			new ImageMinimizerPlugin({
+				minimizer: [
+					{
+						implementation: ImageMinimizerPlugin.squooshMinify,
+						options: {
+							encodeOptions: {
+								mozjpeg: {
+									// That setting might be close to lossless, but it’s not guaranteed
+									// https://github.com/GoogleChromeLabs/squoosh/issues/85
+									quality: 100,
+								},
+								webp: {
+									lossless: 1,
+								},
+								avif: {
+									// https://github.com/GoogleChromeLabs/squoosh/blob/dev/codecs/avif/enc/README.md
+									cqLevel: 0,
+								},
+							},
+						},
+					},
+					{
+						implementation: ImageMinimizerPlugin.svgoMinify,
+						options: {
+							encodeOptions: {
+								// Pass over SVGs multiple times to ensure all optimizations are applied. False by default
+								multipass: true,
+								plugins: [
+									// set of built-in plugins enabled by default
+									// see: https://github.com/svg/svgo#default-preset
+									'preset-default',
+								],
+							},
+						},
+					},
+				],
 			}),
 		],
 	},
