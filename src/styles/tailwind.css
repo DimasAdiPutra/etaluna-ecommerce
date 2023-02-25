@@ -66,20 +66,20 @@
 
 	/* Nav links */
 	.nav__link {
-		@apply hover:text-other transition-all duration-150;
+		@apply hover:text-white xl:hover:text-other hover:bg-other xl:hover:bg-opacity-0 rounded-l-full xl:rounded-none hover:px-6 xl:hover:px-0 py-3 xl:py-0 transition-all duration-150;
 	}
 
-	.nav__link--mobile {
-		@apply hover:text-white hover:bg-other rounded-l-full hover:px-6 py-3;
-	}
+	/* .nav__link--mobile {
+		@apply     ;
+	} */
 
 	.nav__link[aria-current] {
-		@apply text-other;
+		@apply text-white xl:text-other bg-other xl:bg-opacity-0 px-6 xl:px-0;
 	}
 
-	.nav__link--mobile[aria-current] {
-		@apply text-white bg-other px-6;
-	}
+	/* .nav__link--mobile[aria-current] {
+		@apply  ;
+	} */
 
 	/* Nav button */
 	button[aria-expanded='true'] span:nth-child(1) {
