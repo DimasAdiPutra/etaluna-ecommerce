@@ -6,6 +6,34 @@ if (document.getElementById('mainForm')) {
 		errorLabelCssClass: 'error',
 	})
 
+	if (document.getElementById('name')) {
+		validation.addField('#name', [
+			{
+				rule: 'required',
+				errorMessage: 'Name is required.',
+			},
+			{
+				rule: 'minLength',
+				value: 2,
+				errorMessage: 'The name must contain a minimum of 2 letters.',
+			},
+		])
+	}
+
+	if (document.getElementById('firstName')) {
+		validation.addField('#firstName', [
+			{
+				rule: 'required',
+				errorMessage: 'First Name is required.',
+			},
+			{
+				rule: 'minLength',
+				value: 2,
+				errorMessage: 'The first name must contain a minimum of 2 letters.',
+			},
+		])
+	}
+
 	if (document.getElementById('email')) {
 		validation
 			.addField('#email', [
@@ -36,34 +64,6 @@ if (document.getElementById('mainForm')) {
 						'Passwords must at least have 8 characters and contain 1 capital letter, 1 lowercase, and 1 number.',
 				},
 			])
-	}
-
-	if (document.getElementById('name')) {
-		validation.addField('#name', [
-			{
-				rule: 'required',
-				errorMessage: 'Name is required.',
-			},
-			{
-				rule: 'minLength',
-				value: 2,
-				errorMessage: 'The name must contain a minimum of 2 letters.',
-			},
-		])
-	}
-
-	if (document.getElementById('firstName')) {
-		validation.addField('#firstName', [
-			{
-				rule: 'required',
-				errorMessage: 'First Name is required.',
-			},
-			{
-				rule: 'minLength',
-				value: 2,
-				errorMessage: 'The first name must contain a minimum of 2 letters.',
-			},
-		])
 	}
 
 	validation.onSuccess(() => {

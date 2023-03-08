@@ -1,6 +1,6 @@
-<nav class="bg-primary text-white sticky top-0">
-	<div class="container min-h-20 flex justify-between items-center mx-auto py-3 xl:gap-6">
-		<a href="/" class="logo">ETA<span class="text-white order-1">LUNA</span></a>
+<nav class="text-jet sticky top-0">
+	<div class="container min-h-[100px] flex justify-between items-center mx-auto py-3 xl:gap-6">
+		<a href="/" class="logo">ETA<span class="text-jet order-1">LUNA</span></a>
 
 		<button id="nav-button" class="xl:hidden relative z-50 flex flex-col justify-between w-6 h-5 order-3" tabindex="0" aria-expanded="false" aria-label="Nav Button" aria-controls="nav-menu" aria-haspopup="true">
 			<span class="block relative w-full h-1 transition-all rounded-full"></span>
@@ -9,7 +9,7 @@
 		</button>
 
 		<!-- Mobile version -->
-		<div id="nav-menu" class="xl:flex whitespace-nowrap absolute xl:static bg-primary xl:bg-opacity-0 w-11/12 xl:w-3/4 max-w-0 xl:max-w-none min-h-screen xl:min-h-0 top-0 right-0 pl-0 pt-16 xl:pt-0 nav_shadow xl:shadow-none overflow-hidden transition-all duration-500 xl:justify-between xl:items-center xl:gap-4" role="menu" aria-labelledby="nav-button">
+		<div id="nav-menu" class="xl:flex whitespace-nowrap absolute xl:static bg-antiflash-white xl:bg-opacity-0 w-11/12 xl:w-3/4 max-w-0 xl:max-w-none min-h-screen xl:min-h-0 top-0 right-0 pl-0 pt-24 xl:pt-0 nav_shadow xl:shadow-none overflow-hidden transition-all duration-500 xl:justify-between xl:items-center xl:gap-4" role="menu" aria-labelledby="nav-button">
 			<div class="w-full xl:max-w-md flex flex-col xl:flex-row justify-between gap-3 xl:gap-6 mb-4 xl:mb-0" tabindex="-1">
 				<a href="/" class="nav__link" role="menuitem" <%= currentPage === '' ? `aria-current="page"` : '' %> tabindex='-1'>Home</a>
 				<a href="/product" class="nav__link" role="menuitem" <%= currentPage === 'product' ? `aria-current="page"` : '' %> tabindex='-1'>Products</a>
@@ -28,8 +28,8 @@
 				</div>
 
 				<div class="flex max-w-[240px] justify-between gap-3 self-end xl:self-auto" tabindex="-1">
-					<a href="/login" class="button button--tertiary" tabindex="-1">Login</a>
-					<a href="/register" class="button button--tertiary--border" tabindex="-1">Register</a>
+					<a href="/login" class="button button--primary" tabindex="-1">Login</a>
+					<a href="/register" class="button button--primary--border" tabindex="-1">Register</a>
 				</div>
 			</div>
 		</div>

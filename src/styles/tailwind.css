@@ -8,7 +8,7 @@
 	}
 
 	body {
-		@apply bg-white;
+		@apply bg-antiflash-white;
 	}
 
 	.icons {
@@ -22,51 +22,61 @@
 		@apply flex gap-3 py-3 px-6 rounded w-fit text-white transition-colors duration-300 disabled:bg-black;
 	}
 
+	/* Button colors */
 	.button--primary {
-		@apply bg-primary;
+		@apply bg-cornflower-blue;
 	}
 
 	.button--secondary {
-		@apply bg-tertiary;
+		@apply bg-light-red;
 	}
 
 	.button--tertiary {
-		@apply bg-other;
+		@apply bg-moccasin;
 	}
 
+	/* Button border no color */
 	.button--primary--border {
-		@apply outline outline-2 -outline-offset-2 outline-primary text-primary;
+		@apply outline outline-2 -outline-offset-2 outline-cornflower-blue text-cornflower-blue;
 	}
 
 	.button--secondary--border {
-		@apply outline outline-2 -outline-offset-2 outline-tertiary text-tertiary;
+		@apply outline outline-2 -outline-offset-2 outline-light-red text-light-red;
 	}
 
 	.button--tertiary--border {
-		@apply outline outline-2 -outline-offset-2 outline-other text-other;
+		@apply outline outline-2 -outline-offset-2 outline-moccasin text-moccasin;
 	}
 
-	.button--primary:hover,
-	.button--secondary:hover,
+	.button:hover {
+		@apply text-jet;
+	}
+
+	.button--primary:hover {
+		@apply bg-uranian-blue;
+	}
+	.button--secondary:hover {
+		@apply bg-melon;
+	}
 	.button--tertiary:hover {
-		@apply bg-opacity-90;
+		@apply bg-navajo-white;
 	}
 
 	.button--primary--border:hover {
-		@apply bg-primary bg-opacity-90 text-white;
+		@apply bg-uranian-blue text-jet;
 	}
 
 	.button--secondary--border:hover {
-		@apply bg-tertiary bg-opacity-90 text-white;
+		@apply bg-melon text-melon;
 	}
 
 	.button--tertiary--border:hover {
-		@apply bg-other bg-opacity-90 text-white;
+		@apply bg-navajo-white text-navajo-white;
 	}
 
 	/* Nav links */
 	.nav__link {
-		@apply hover:text-white xl:hover:text-other hover:bg-other xl:hover:bg-opacity-0 rounded-l-full xl:rounded-none hover:px-6 xl:hover:px-0 py-3 xl:py-0 transition-all duration-150;
+		@apply hover:text-antiflash-white xl:hover:text-cornflower-blue hover:bg-cornflower-blue xl:hover:bg-antiflash-white rounded-l-full xl:rounded-none hover:px-6 xl:hover:px-0 py-3 xl:py-0 transition-all duration-150;
 	}
 
 	/* .nav__link--mobile {
@@ -74,7 +84,7 @@
 	} */
 
 	.nav__link[aria-current] {
-		@apply text-white xl:text-other bg-other xl:bg-opacity-0 px-6 xl:px-0;
+		@apply text-antiflash-white xl:text-cornflower-blue bg-cornflower-blue xl:bg-antiflash-white px-6 xl:px-0;
 	}
 
 	/* .nav__link--mobile[aria-current] {
@@ -82,23 +92,26 @@
 	} */
 
 	/* Nav button */
-	button[aria-expanded='true'] span:nth-child(1) {
-		@apply animate-top bg-white;
+	button span {
+		@apply bg-jet;
 	}
-	button[aria-expanded='false'] span:nth-child(1) {
-		@apply animate-top-2 bg-other;
+	button[aria-expanded='true'] span:nth-child(1) {
+		@apply animate-top;
 	}
 	button[aria-expanded='true'] span:nth-child(2) {
-		@apply animate-zoom-out bg-other;
-	}
-	button[aria-expanded='false'] span:nth-child(2) {
-		@apply animate-zoom-in bg-white;
+		@apply animate-zoom-out;
 	}
 	button[aria-expanded='true'] span:nth-child(3) {
-		@apply animate-bottom bg-white;
+		@apply animate-bottom;
+	}
+	button[aria-expanded='false'] span:nth-child(1) {
+		@apply animate-top-2;
+	}
+	button[aria-expanded='false'] span:nth-child(2) {
+		@apply animate-zoom-in;
 	}
 	button[aria-expanded='false'] span:nth-child(3) {
-		@apply animate-bottom-2 bg-other;
+		@apply animate-bottom-2;
 	}
 
 	/* Form input */
@@ -114,7 +127,7 @@
 @layer utilities {
 	.logo {
 		font-family: 'Exo', sans-serif;
-		@apply text-2xl xs:text-3xl md:text-4xl text-other;
+		@apply text-2xl xs:text-3xl md:text-4xl text-cornflower-blue;
 	}
 
 	h1,
