@@ -1192,8 +1192,8 @@ button[aria-expanded='false'] span:nth-child(3) {
 .min-h-screen {
   min-height: 100vh;
 }
-.min-h-\[100px\] {
-  min-height: 100px;
+.min-h-\[80px\] {
+  min-height: 80px;
 }
 .w-4\/5 {
   width: 80%;
