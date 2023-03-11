@@ -1,6 +1,6 @@
-<nav class="bg-primary text-white sticky top-0">
-	<div class="container min-h-20 flex justify-between items-center mx-auto py-3">
-		<a href="/" class="logo">ETA<span class="text-white order-1">LUNA</span></a>
+<nav class="text-jet sticky top-0 bg-antiflash-white">
+	<div class="container min-h-[100px] flex justify-between items-center mx-auto py-3 xl:gap-6">
+		<a href="/" class="logo">ETA<span class="text-jet order-1">LUNA</span></a>
 
 		<button id="nav-button" class="xl:hidden relative z-50 flex flex-col justify-between w-6 h-5 order-3" tabindex="0" aria-expanded="false" aria-label="Nav Button" aria-controls="nav-menu" aria-haspopup="true">
 			<span class="block relative w-full h-1 transition-all rounded-full"></span>
@@ -9,37 +9,35 @@
 		</button>
 
 		<!-- Mobile version -->
-		<div id="nav-menu" class="xl:hidden whitespace-nowrap absolute bg-primary w-11/12 max-w-0 min-h-screen top-0 right-0 pl-0 pt-16 nav_shadow overflow-hidden transition-all duration-500" role="menu" aria-labelledby="nav-button">
-			<div class="w-full flex flex-col justify-between gap-3 mb-4" tabindex="-1">
-				<a href="/" class="nav__link nav__link--mobile" role="menuitem" <%= currentPage === '' ? `aria-current="page"` : '' %> tabindex='-1'>Home</a>
-				<a href="/product" class="nav__link nav__link--mobile" role="menuitem" <%= currentPage === 'product' ? `aria-current="page"` : '' %> tabindex='-1'>Products</a>
-				<a href="/about" class="nav__link nav__link--mobile" role="menuitem" <%= currentPage === 'about' ? `aria-current="page"` : '' %> tabindex='-1'>About Us</a>
-				<a href="/contact" class="nav__link nav__link--mobile" role="menuitem" <%= currentPage === 'contact' ? `aria-current="page"` : '' %> tabindex='-1'>Contact Us</a>
+		<div id="nav-menu" class="xl:flex whitespace-nowrap absolute xl:static bg-antiflash-white xl:bg-opacity-0 w-11/12 xl:w-3/4 max-w-0 xl:max-w-none min-h-screen xl:min-h-0 top-0 right-0 pl-0 pt-24 xl:pt-0 nav_shadow xl:shadow-none overflow-hidden transition-all duration-500 xl:justify-between xl:items-center xl:gap-4" role="menu" aria-labelledby="nav-button">
+			<div class="w-full xl:max-w-md flex flex-col xl:flex-row justify-between gap-3 xl:gap-6 mb-4 xl:mb-0" tabindex="-1">
+				<a href="/" class="nav__link" role="menuitem" <%= currentPage === '' ? `aria-current="page"` : '' %> tabindex='-1'>Home</a>
+				<a href="/product" class="nav__link" role="menuitem" <%= currentPage === 'product' ? `aria-current="page"` : '' %> tabindex='-1'>Products</a>
+				<a href="/about" class="nav__link" role="menuitem" <%= currentPage === 'about' ? `aria-current="page"` : '' %> tabindex='-1'>About Us</a>
+				<a href="/contact" class="nav__link" role="menuitem" <%= currentPage === 'contact' ? `aria-current="page"` : '' %> tabindex='-1'>Contact Us</a>
 			</div>
 
-			<div class="w-full pr-4 flex flex-col justify-between gap-3" tabindex="-1">
-				<div class="relative rounded-md shadow-sm" tabindex="-1">
-					<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" tabindex="-1">
-						<label for="search-mobile" class="material-symbols-rounded text-black font-bold text-lg" tabindex="-1">
-							<i data-feather="search" class="opacity-50"></i>
-						</label>
-					</div>
-					<input id="search-mobile" type="search" placeholder="search..." name="search" class="form-input w-full focus:border-other hover:border-other border-2 pl-9 rounded-md transition duration-150 ease-in-out mr-0 text-black" tabindex="-1">
-				</div>
+			<div class="w-full xl:w-auto pr-4 xl:pr-0 flex flex-col xl:flex-row justify-between gap-3 xl:items-center" tabindex="-1">
+				<form action="/search" method="POST" class="relative rounded-md shadow-sm" tabindex="-1">
+					<input id="search" type="text" placeholder="search..." name="search" role="searchbox" class="form-input w-full focus:border-uranian-blue hover:border-uranian-blue border-2 pr-12 rounded-full transition duration-150 ease-in-out mr-0 text-black" tabindex="-1">
+					<button type="submit" class="absolute inset-y-0 right-0 px-3 rounded-r-full flex items-center cursor-pointer material-symbols-rounded text-jet font-bold text-lg" tabindex="-1">
+						<i data-feather="search" class="opacity-50 cursor-pointer"></i>
+					</button>
+				</form>
 
-				<div class="flex max-w-[240px] justify-between gap-3 self-end" tabindex="-1">
-					<a href="/login" class="button button--tertiary" tabindex="-1">Login</a>
-					<a href="/register" class="button button--tertiary--border" tabindex="-1">Register</a>
+				<div class="flex max-w-[240px] justify-between gap-3 self-end xl:self-auto" tabindex="-1">
+					<a href="/login" class="button button--primary" tabindex="-1">Login</a>
+					<a href="/register" class="button button--primary--border" tabindex="-1">Register</a>
 				</div>
 			</div>
 		</div>
 
 		<!-- Desktop version -->
-		<div class="hidden xl:flex w-1/3 justify-between order-2" role="menu">
-			<a href="/" class="nav__link" role="menuitem" <%= currentPage === '' ? `aria-current="page"` : '' %>>Home</a>
-			<a href="/product" class="nav__link" role="menuitem" <%= currentPage === 'product' ? `aria-current="page"` : '' %>>Products</a>
-			<a href="/about" class="nav__link" role="menuitem" <%= currentPage === 'about' ? `aria-current="page"` : '' %>>About Us</a>
-			<a href="/contact" class="nav__link" role="menuitem" <%= currentPage === 'contact' ? `aria-current="page"` : '' %>>Contact Us</a>
+		<!-- <div class="hidden xl:flex w-1/3 justify-between order-2" role="menu">
+			<a href="/" class="nav__link" role="menuitem" <%# currentPage === '' ? `aria-current="page"` : '' %>>Home</a>
+			<a href="/product" class="nav__link" role="menuitem" <%# currentPage === 'product' ? `aria-current="page"` : '' %>>Products</a>
+			<a href="/about" class="nav__link" role="menuitem" <%# currentPage === 'about' ? `aria-current="page"` : '' %>>About Us</a>
+			<a href="/contact" class="nav__link" role="menuitem" <%# currentPage === 'contact' ? `aria-current="page"` : '' %>>Contact Us</a>
 		</div>
 
 		<div class="hidden xl:flex w-1/3 gap-4 justify-between items-center order-3">
@@ -53,6 +51,6 @@
 			</div>
 			<a href="/login" class="button button--tertiary">Login</a>
 			<a href="/register" class="button button--tertiary--border">Register</a>
-		</div>
+		</div> -->
 	</div>
 </nav>

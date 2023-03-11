@@ -8,7 +8,7 @@
 	}
 
 	body {
-		@apply bg-white;
+		@apply bg-antiflash-white;
 	}
 
 	.icons {
@@ -22,99 +22,112 @@
 		@apply flex gap-3 py-3 px-6 rounded w-fit text-white transition-colors duration-300 disabled:bg-black;
 	}
 
+	/* Button colors */
 	.button--primary {
-		@apply bg-primary;
+		@apply bg-cornflower-blue;
 	}
 
 	.button--secondary {
-		@apply bg-tertiary;
+		@apply bg-light-red;
 	}
 
 	.button--tertiary {
-		@apply bg-other;
+		@apply bg-moccasin;
 	}
 
+	/* Button border no color */
 	.button--primary--border {
-		@apply outline outline-2 -outline-offset-2 outline-primary text-primary;
+		@apply outline outline-2 -outline-offset-2 outline-cornflower-blue text-cornflower-blue;
 	}
 
 	.button--secondary--border {
-		@apply outline outline-2 -outline-offset-2 outline-tertiary text-tertiary;
+		@apply outline outline-2 -outline-offset-2 outline-light-red text-light-red;
 	}
 
 	.button--tertiary--border {
-		@apply outline outline-2 -outline-offset-2 outline-other text-other;
+		@apply outline outline-2 -outline-offset-2 outline-moccasin text-moccasin;
 	}
 
-	.button--primary:hover,
-	.button--secondary:hover,
+	.button:hover {
+		@apply text-jet;
+	}
+
+	.button--primary:hover {
+		@apply bg-uranian-blue;
+	}
+	.button--secondary:hover {
+		@apply bg-melon;
+	}
 	.button--tertiary:hover {
-		@apply bg-opacity-90;
+		@apply bg-navajo-white;
 	}
 
 	.button--primary--border:hover {
-		@apply bg-primary bg-opacity-90 text-white;
+		@apply bg-uranian-blue text-jet;
 	}
 
 	.button--secondary--border:hover {
-		@apply bg-tertiary bg-opacity-90 text-white;
+		@apply bg-melon text-melon;
 	}
 
 	.button--tertiary--border:hover {
-		@apply bg-other bg-opacity-90 text-white;
+		@apply bg-navajo-white text-navajo-white;
 	}
 
 	/* Nav links */
 	.nav__link {
-		@apply hover:text-other transition-all duration-150;
+		@apply hover:text-antiflash-white xl:hover:text-cornflower-blue hover:bg-cornflower-blue xl:hover:bg-antiflash-white rounded-l-full xl:rounded-none hover:px-6 xl:hover:px-0 py-3 xl:py-0 transition-all duration-150;
 	}
 
-	.nav__link--mobile {
-		@apply hover:text-white hover:bg-other rounded-l-full hover:px-6 py-3;
-	}
+	/* .nav__link--mobile {
+		@apply     ;
+	} */
 
 	.nav__link[aria-current] {
-		@apply text-other;
+		@apply text-antiflash-white xl:text-cornflower-blue bg-cornflower-blue xl:bg-antiflash-white px-6 xl:px-0;
 	}
 
-	.nav__link--mobile[aria-current] {
-		@apply text-white bg-other px-6;
-	}
+	/* .nav__link--mobile[aria-current] {
+		@apply  ;
+	} */
 
 	/* Nav button */
-	button[aria-expanded='true'] span:nth-child(1) {
-		@apply animate-top bg-white;
+	button span {
+		@apply bg-jet;
 	}
-	button[aria-expanded='false'] span:nth-child(1) {
-		@apply animate-top-2 bg-other;
+	button[aria-expanded='true'] span:nth-child(1) {
+		@apply animate-top;
 	}
 	button[aria-expanded='true'] span:nth-child(2) {
-		@apply animate-zoom-out bg-other;
-	}
-	button[aria-expanded='false'] span:nth-child(2) {
-		@apply animate-zoom-in bg-white;
+		@apply animate-zoom-out;
 	}
 	button[aria-expanded='true'] span:nth-child(3) {
-		@apply animate-bottom bg-white;
+		@apply animate-bottom;
+	}
+	button[aria-expanded='false'] span:nth-child(1) {
+		@apply animate-top-2;
+	}
+	button[aria-expanded='false'] span:nth-child(2) {
+		@apply animate-zoom-in;
 	}
 	button[aria-expanded='false'] span:nth-child(3) {
-		@apply animate-bottom-2 bg-other;
+		@apply animate-bottom-2;
 	}
 
 	/* Form input */
 	.form__input {
-		@apply form-input block w-full px-3 py-1.5 text-base font-normal text-black bg-white bg-clip-padding rounded border-none outline-none transition ease-in-out duration-300 m-0 focus:text-black focus:bg-white focus:border-primary focus:outline-none;
+		@apply form-input block w-full px-3 py-1.5 text-base font-normal text-jet bg-antiflash-white bg-clip-padding rounded border-none outline-none transition ease-in-out duration-300 m-0 focus:text-jet focus:bg-antiflash-white focus:border-cornflower-blue focus:outline-none;
 	}
 
 	.form__input--border {
-		@apply border border-solid border-black;
+		@apply border border-solid border-jet;
 	}
 }
 
 @layer utilities {
 	.logo {
 		font-family: 'Exo', sans-serif;
-		@apply text-2xl xs:text-3xl md:text-4xl text-other;
+		@apply text-2xl xs:text-3xl md:text-4xl text-cornflower-blue;
 	}
 
 	h1,
@@ -124,6 +137,15 @@
 	h5,
 	h6 {
 		font-family: 'Lora', sans-serif;
+	}
+
+	nav {
+		box-shadow: 0.1px 0.3px 0.4px -10px rgba(0, 0, 0, 0.028),
+			0.1px 0.7px 1px -10px rgba(0, 0, 0, 0.04),
+			0.3px 1.3px 1.9px -10px rgba(0, 0, 0, 0.05),
+			0.4px 2.2px 3.4px -10px rgba(0, 0, 0, 0.06),
+			0.8px 4.2px 6.3px -10px rgba(0, 0, 0, 0.072),
+			2px 10px 15px -10px rgba(0, 0, 0, 0.1);
 	}
 
 	.nav_shadow {
