@@ -116,11 +116,11 @@
 
 	/* Form input */
 	.form__input {
-		@apply form-input block w-full px-3 py-1.5 text-base font-normal text-black bg-white bg-clip-padding rounded border-none outline-none transition ease-in-out duration-300 m-0 focus:text-black focus:bg-white focus:border-primary focus:outline-none;
+		@apply form-input block w-full px-3 py-1.5 text-base font-normal text-jet bg-antiflash-white bg-clip-padding rounded border-none outline-none transition ease-in-out duration-300 m-0 focus:text-jet focus:bg-antiflash-white focus:border-cornflower-blue focus:outline-none;
 	}
 
 	.form__input--border {
-		@apply border border-solid border-black;
+		@apply border border-solid border-jet;
 	}
 }
 
@@ -137,6 +137,15 @@
 	h5,
 	h6 {
 		font-family: 'Lora', sans-serif;
+	}
+
+	nav {
+		box-shadow: 0.1px 0.3px 0.4px -10px rgba(0, 0, 0, 0.028),
+			0.1px 0.7px 1px -10px rgba(0, 0, 0, 0.04),
+			0.3px 1.3px 1.9px -10px rgba(0, 0, 0, 0.05),
+			0.4px 2.2px 3.4px -10px rgba(0, 0, 0, 0.06),
+			0.8px 4.2px 6.3px -10px rgba(0, 0, 0, 0.072),
+			2px 10px 15px -10px rgba(0, 0, 0, 0.1);
 	}
 
 	.nav_shadow {

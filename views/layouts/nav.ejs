@@ -1,4 +1,4 @@
-<nav class="text-jet sticky top-0">
+<nav class="text-jet sticky top-0 bg-antiflash-white">
 	<div class="container min-h-[100px] flex justify-between items-center mx-auto py-3 xl:gap-6">
 		<a href="/" class="logo">ETA<span class="text-jet order-1">LUNA</span></a>
 
@@ -18,14 +18,12 @@
 			</div>
 
 			<div class="w-full xl:w-auto pr-4 xl:pr-0 flex flex-col xl:flex-row justify-between gap-3 xl:items-center" tabindex="-1">
-				<div class="relative rounded-md shadow-sm" tabindex="-1">
-					<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" tabindex="-1">
-						<label for="search-mobile" class="material-symbols-rounded text-black font-bold text-lg" tabindex="-1">
-							<i data-feather="search" class="opacity-50"></i>
-						</label>
-					</div>
-					<input id="search-mobile" type="search" placeholder="search..." name="search" class="form-input w-full focus:border-other hover:border-other border-2 pl-9 rounded-md transition duration-150 ease-in-out mr-0 text-black" tabindex="-1">
-				</div>
+				<form action="/search" method="POST" class="relative rounded-md shadow-sm" tabindex="-1">
+					<input id="search" type="text" placeholder="search..." name="search" role="searchbox" class="form-input w-full focus:border-uranian-blue hover:border-uranian-blue border-2 pr-12 rounded-full transition duration-150 ease-in-out mr-0 text-black" tabindex="-1">
+					<button type="submit" class="absolute inset-y-0 right-0 px-3 rounded-r-full flex items-center cursor-pointer material-symbols-rounded text-jet font-bold text-lg" tabindex="-1">
+						<i data-feather="search" class="opacity-50 cursor-pointer"></i>
+					</button>
+				</form>
 
 				<div class="flex max-w-[240px] justify-between gap-3 self-end xl:self-auto" tabindex="-1">
 					<a href="/login" class="button button--primary" tabindex="-1">Login</a>
