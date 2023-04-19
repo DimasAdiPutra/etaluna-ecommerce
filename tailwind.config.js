@@ -54,12 +54,12 @@ module.exports = {
 			},
 		},
 		colors: {
-			primary: '#37718E',
-			secondary: '#254E70',
-			tertiary: '#EF767A',
-			other: '#EEB868',
-			white: '#FCFFFD',
-			black: '#1B1B1B',
+			// primary: '#37718E',
+			// secondary: '#254E70',
+			// tertiary: '#EF767A',
+			// other: '#EEB868',
+			// white: '#FCFFFD',
+			// black: '#1B1B1B',
 			jet: '#312f2fff',
 			'light-red': '#f87575ff',
 			melon: '#ffa9a3ff',
@@ -68,6 +68,20 @@ module.exports = {
 			'antiflash-white': '#f0f6f6ff',
 			moccasin: '#f8e9a1',
 			'navajo-white': '#f9d56e',
+
+			// Color
+			primary: '#395D73',
+			danger: '#BF656D',
+			warning: '#F29544',
+			black: '#1E3340',
+			white: '#F2F2F2',
+
+			/* Color Theme Swatches in Hex */
+			// .SPRING-OF-TOKYO-1-hex { color: #BF656D; }
+			// .SPRING-OF-TOKYO-2-hex { color: #F2F2F2; }
+			// .SPRING-OF-TOKYO-3-hex { color: #1E3340; }
+			// .SPRING-OF-TOKYO-4-hex { color: #395D73; }
+			// .SPRING-OF-TOKYO-5-hex { color: #F29544; }
 		},
 		container: {
 			center: true,
