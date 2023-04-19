@@ -1,15 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+	// file yang menggunakan tailwind
 	content: [
 		'./views/**/*.{html,js,ejs}',
 		'./public/javascripts/*.js',
 		'./src/**/*.{js,css}',
 	],
+
+	// custom class
 	theme: {
 		extend: {
+			// custom height
 			height: {
 				'full-screen': 'calc(100vh - 80px)',
 			},
+
+			// new keyframes
 			keyframes: {
 				top: {
 					'0%': { top: '0', transform: 'rotate(0)' },
@@ -41,6 +47,8 @@ module.exports = {
 					'100%': { transform: 'scale(1)' },
 				},
 			},
+
+			// new animations
 			animation: {
 				top: 'ease .7s top forwards',
 				'top-2': 'ease .7s top-2 forwards',
@@ -49,40 +57,23 @@ module.exports = {
 				bottom: 'ease .7s bottom forwards',
 				'bottom-2': 'ease .7s bottom-2 forwards',
 			},
+
+			// new media queries
 			screens: {
 				xs: { min: '375px' },
 			},
 		},
-		colors: {
-			// primary: '#37718E',
-			// secondary: '#254E70',
-			// tertiary: '#EF767A',
-			// other: '#EEB868',
-			// white: '#FCFFFD',
-			// black: '#1B1B1B',
-			jet: '#312f2fff',
-			'light-red': '#f87575ff',
-			melon: '#ffa9a3ff',
-			'uranian-blue': '#b9e6ffff',
-			'cornflower-blue': '#5c95ffff',
-			'antiflash-white': '#f0f6f6ff',
-			moccasin: '#f8e9a1',
-			'navajo-white': '#f9d56e',
 
-			// Color
+		// color palletes
+		colors: {
 			primary: '#395D73',
 			danger: '#BF656D',
 			warning: '#F29544',
 			black: '#1E3340',
 			white: '#F2F2F2',
-
-			/* Color Theme Swatches in Hex */
-			// .SPRING-OF-TOKYO-1-hex { color: #BF656D; }
-			// .SPRING-OF-TOKYO-2-hex { color: #F2F2F2; }
-			// .SPRING-OF-TOKYO-3-hex { color: #1E3340; }
-			// .SPRING-OF-TOKYO-4-hex { color: #395D73; }
-			// .SPRING-OF-TOKYO-5-hex { color: #F29544; }
 		},
+
+		// setup container
 		container: {
 			center: true,
 			padding: {
@@ -93,5 +84,7 @@ module.exports = {
 			},
 		},
 	},
+
+	// Menambahkan plugin untuk styling form
 	plugins: [require('@tailwindcss/forms')],
 }

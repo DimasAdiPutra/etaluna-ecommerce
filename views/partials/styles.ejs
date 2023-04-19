@@ -1,3 +1,4 @@
+<!-- start - google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -6,8 +7,9 @@
 	as="style"
 	onload="this.onload=null;this.rel='stylesheet'"
 />
+<!-- end - google fonts -->
 
-<!-- Main Css -->
+<!-- start - main css -->
 <% if (mode === 'development') { %>
 <link
 	rel="preload"
@@ -23,8 +25,9 @@
 	onload="this.onload=null;this.rel='stylesheet'"
 />
 <% } %>
+<!-- end - main css -->
 
-<!-- Jika tidak bisa menjalankan script gunakan link di bawah ini untuk merender css secara default tanpa asyncronous -->
+<!-- Jika tidak bisa menjalankan script gunakan link di bawah ini untuk merender css secara default tanpa asyncronous. Merender css secara asyncronous akan mempercepat performance website -->
 <noscript>
 	<!-- Google fonts -->
 	<link

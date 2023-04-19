@@ -1,11 +1,24 @@
-// Import icons
+/**
+ * @import feather-icons
+ */
 const feather = require('feather-icons')
 
+/**
+ * @const button - mengambil element dengan id 'nav-button'
+ * @const nav - mengambil element dengan id 'nav-menu'
+ * @const navChildren - mengambil semua element input yang ada di dalam const nav
+ */
 const button = document.getElementById('nav-button')
 const nav = document.getElementById('nav-menu')
 
 const navChildren = nav.querySelectorAll('a, input')
 
+/**
+ * @event click - ketika const button di click atau element nav-button di click maka akan mengecek atribut aria-expanded
+ * @atribute aria-expanded = true / false
+ * @bool true = nav-menu di tampilkan
+ * @bool false = nav-menu di sembunyikan
+ */
 button.addEventListener('click', () => {
 	if (button.ariaExpanded == 'true') {
 		button.ariaExpanded = 'false'
@@ -22,6 +35,9 @@ button.addEventListener('click', () => {
 	}
 })
 
+/**
+ * @event focusin - ketika menekan tab dan focus ke area diluar nav-menu maka nav-menu akan tertutup
+ */
 document.addEventListener('focusin', (e) => {
 	if (e.target !== nav && !nav.contains(e.target) && e.target !== button) {
 		button.ariaExpanded = 'false'

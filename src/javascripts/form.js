@@ -1,11 +1,23 @@
+/**
+ * mengecek apakah terdapat element dengan id mainForm
+ * jika ada kita akan merequire package just-validate untuk melakukan validasi form
+ */
 if (document.getElementById('mainForm')) {
 	const JustValidate = require('just-validate')
 
+	/**
+	 * Membuat custom class untuk inputan yang tidak valid dan error
+	 * @class invalid - digunakan untuk inputan yang tidak valid
+	 * @class error - digunakan untuk keterangan error
+	 */
 	const validation = new JustValidate('#mainForm', {
 		errorFieldCssClass: 'invalid',
 		errorLabelCssClass: 'error',
 	})
 
+	/**
+	 * Untuk field name dan firstName wajib diisi dan minimal memiliki 2 huruf
+	 */
 	if (document.getElementById('name')) {
 		validation.addField('#name', [
 			{
@@ -15,7 +27,7 @@ if (document.getElementById('mainForm')) {
 			{
 				rule: 'minLength',
 				value: 2,
-				errorMessage: 'The name must contain a minimum of 2 letters.',
+				errorMessage: 'Name must be at least 2 letters.',
 			},
 		])
 	}
@@ -29,43 +41,48 @@ if (document.getElementById('mainForm')) {
 			{
 				rule: 'minLength',
 				value: 2,
-				errorMessage: 'The first name must contain a minimum of 2 letters.',
+				errorMessage: 'First Name must be at least 2 letters.',
 			},
 		])
 	}
 
+	/**
+	 * just-validate sudah menyediakan validasi email yang cukup dengan mengecek @ dan domain emailnya
+	 */
 	if (document.getElementById('email')) {
-		validation
-			.addField('#email', [
-				{
-					rule: 'required',
-					errorMessage: 'Email is required',
-				},
-				{
-					validator: (value) =>
-						value.split('').find((e) => e === '@') ? true : false,
-					errorMessage: 'Email must have @ in it.',
-				},
-				{
-					rule: 'email',
-					errorMessage:
-						'After @ there must be at least 2 letters, point (.), And 2 letters behind the point (.)',
-				},
-			])
-			.addField('#password', [
-				{
-					rule: 'required',
-					errorMessage: 'Password is required.',
-				},
-				{
-					rule: 'customRegexp',
-					value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-					errorMessage:
-						'Passwords must at least have 8 characters and contain 1 capital letter, 1 lowercase, and 1 number.',
-				},
-			])
+		validation.addField('#email', [
+			{
+				rule: 'required',
+				errorMessage: 'Email is required',
+			},
+			{
+				rule: 'email',
+				errorMessage: 'Invalid email. Please enter a valid email.',
+			},
+		])
 	}
 
+	/**
+	 * Password menggunakan regex dengan minimal 8 karakter yang berisi huruf besar, huruf kecil dan angka
+	 */
+	if (document.getElementById('password')) {
+		validation.addField('#password', [
+			{
+				rule: 'required',
+				errorMessage: 'Password is required.',
+			},
+			{
+				rule: 'customRegexp',
+				value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+				errorMessage:
+					'Password is too weak. It must be at least 8 characters long and include an uppercase letter, a lowercase letter and a number.',
+			},
+		])
+	}
+
+	/**
+	 * @success - submit form
+	 */
 	validation.onSuccess(() => {
 		document.getElementById('mainForm').submit()
 	})

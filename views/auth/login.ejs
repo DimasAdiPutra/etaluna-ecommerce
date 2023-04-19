@@ -1,13 +1,17 @@
 <div
 	class="container flex w-full justify-center md:h-full-screen md:items-center"
 >
+	<!-- start - form -->
 	<form
 		id="mainForm"
 		class="flex flex-col w-full max-w-sm xl:max-w-md md:shadow-card pb-10 pt-8 px-6 md:rounded-lg"
 		method="post"
 		action="/auth/login"
 	>
+		<!-- title -->
 		<h1 class="mb-6 text-4xl">Login Page</h1>
+
+		<!-- start - input email -->
 		<div class="form-group mb-6">
 			<label for="email" class="form-label inline-block mb-2 text-gray-700"
 				>Email :</label
@@ -21,6 +25,9 @@
 				placeholder="example@example.com"
 			/>
 		</div>
+		<!-- end - input email -->
+
+		<!-- start - input password -->
 		<div class="form-group mb-6">
 			<label for="password" class="form-label inline-block mb-2 text-gray-700"
 				>Password :</label
@@ -33,9 +40,12 @@
 				placeholder="Enter your password here..."
 			/>
 		</div>
+		<!-- end - input password -->
+
 		<div
 			class="flex flex-col xs:flex-row xs:justify-between xs:items-center gap-2 mb-6"
 		>
+			<!-- start - checkbox -->
 			<div class="form-group form-check">
 				<input
 					type="checkbox"
@@ -49,6 +59,9 @@
 					>Remember me</label
 				>
 			</div>
+			<!-- end - checkbox -->
+
+			<!-- start - signin button -->
 			<button
 				type="submit"
 				id="formButton"
@@ -56,12 +69,18 @@
 			>
 				Sign in
 			</button>
+			<!-- end - signin button -->
 		</div>
+
+		<!-- start - forgot password -->
 		<a
 			href="/auth/forget"
 			class="self-end text-primary hover:text-secondary focus:text-secondary transition duration-200 ease-in-out"
 			>Forgot password?</a
 		>
+		<!-- end - forgot password -->
+
+		<!-- start - register link -->
 		<p class="text-gray-800 mt-6 text-center">
 			Not a member?
 			<a
@@ -70,5 +89,7 @@
 				>Register</a
 			>
 		</p>
+		<!-- end - register link -->
 	</form>
+	<!-- end - form -->
 </div>
