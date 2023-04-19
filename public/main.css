@@ -865,8 +865,8 @@ select {
 }
 .nav__link:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(57, 93, 115, 1);
-  background-color: rgb(57 93 115 / var(--tw-bg-opacity));
+  background-color: rgba(242, 149, 68, 1);
+  background-color: rgb(242 149 68 / var(--tw-bg-opacity));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   --tw-text-opacity: 1;
@@ -882,6 +882,7 @@ select {
   }
 
   .nav__link:hover {
+    --tw-bg-opacity: 0;
     padding-left: 0px;
     padding-right: 0px;
     --tw-text-opacity: 1;
@@ -905,6 +906,7 @@ select {
 @media (min-width: 1280px) {
 
   .nav__link[aria-current] {
+    --tw-bg-opacity: 0;
     padding-left: 0px;
     padding-right: 0px;
     --tw-text-opacity: 1;
@@ -1614,10 +1616,10 @@ nav {
   border-color: rgba(242, 149, 68, 1);
   border-color: rgb(242 149 68 / var(--tw-border-opacity));
 }
-.hover\:bg-primary:hover {
+.hover\:bg-warning:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(57, 93, 115, 1);
-  background-color: rgb(57 93 115 / var(--tw-bg-opacity));
+  background-color: rgba(242, 149, 68, 1);
+  background-color: rgb(242 149 68 / var(--tw-bg-opacity));
 }
 .hover\:px-6:hover {
   padding-left: 1.5rem;
@@ -1778,6 +1780,10 @@ nav {
     --tw-shadow-colored: 0 0 rgba(0,0,0,0);
     box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .xl\:hover\:bg-opacity-0:hover {
+    --tw-bg-opacity: 0;
   }
 
   .xl\:hover\:px-0:hover {

@@ -68,7 +68,7 @@
 
 	/* Nav links */
 	.nav__link {
-		@apply hover:text-white xl:hover:text-warning hover:bg-primary rounded-l-full xl:rounded-none hover:px-6 xl:hover:px-0 py-3 xl:py-0 transition-all duration-150;
+		@apply hover:text-white xl:hover:text-warning xl:hover:bg-opacity-0 hover:bg-warning rounded-l-full xl:rounded-none hover:px-6 xl:hover:px-0 py-3 xl:py-0 transition-all duration-150;
 	}
 
 	/* .nav__link--mobile {
@@ -76,7 +76,7 @@
 	} */
 
 	.nav__link[aria-current] {
-		@apply text-white xl:text-warning bg-warning px-6 xl:px-0;
+		@apply text-white xl:text-warning bg-warning xl:bg-opacity-0 px-6 xl:px-0;
 	}
 
 	/* .nav__link--mobile[aria-current] {
