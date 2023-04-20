@@ -1,10 +1,14 @@
 <main
 	class="container m-auto min-h-screen flex flex-col <%= env === 'development' ? '' : 'items-center' %> justify-center"
 >
+	<!-- start - illustration image -->
 	<div class="w-4/5 mb-4 max-w-2xl">
 		<img class="w-full" src="/images/back-home.svg" alt="404 Illustration" />
 	</div>
+	<!-- end - illustration image -->
 
+	<!-- jika dalam mode development, tampilkan pesan error -->
+	<!-- jika dalam mode production sembunyikan pesan error -->
 	<h1 class="w-fit"><%= `${error.status} ${error.message}` %></h1>
 	<% if (env === 'development') { %>
 	<pre><%= error.stack %> </pre>
@@ -12,5 +16,6 @@
 	<p>Please return to the <a href="/" class="text-primary">Home Page</a></p>
 	<% } %>
 
+	<!-- kembali ke home -->
 	<a href="/" class="button button--primary mt-3">Back to Home</a>
 </main>

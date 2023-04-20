@@ -1,6 +1,7 @@
 <div
 	class="container flex w-full justify-center md:h-full-screen md:items-center"
 >
+	<!-- start - form -->
 	<form
 		id="mainForm"
 		class="flex flex-col w-full max-w-sm xl:max-w-md md:shadow-card pb-10 pt-8 px-6 md:rounded-lg"
@@ -8,8 +9,12 @@
 		action="/auth/login"
 		novalidate
 	>
+		<!-- title -->
 		<h1 class="mb-6 text-4xl">Register Page</h1>
+
+		<!-- start - name -->
 		<div class="xl:flex xl:gap-2">
+			<!-- start - first name -->
 			<div class="form-group mb-6">
 				<label
 					for="firstName"
@@ -25,6 +30,9 @@
 					placeholder="Your first name here..."
 				/>
 			</div>
+			<!-- end - first name -->
+
+			<!-- start - last name -->
 			<div class="form-group mb-6">
 				<label for="lastName" class="form-label inline-block mb-2 text-gray-700"
 					>Last Name :</label
@@ -38,7 +46,11 @@
 					placeholder="Your last name here... (opsional)"
 				/>
 			</div>
+			<!-- end - last name -->
 		</div>
+		<!-- end - name -->
+
+		<!-- start - email -->
 		<div class="form-group mb-6">
 			<label for="email" class="form-label inline-block mb-2 text-gray-700"
 				>Email :</label
@@ -52,6 +64,9 @@
 				placeholder="example@example.com"
 			/>
 		</div>
+		<!-- end - email -->
+
+		<!-- start - password -->
 		<div class="form-group mb-6">
 			<label for="password" class="form-label inline-block mb-2 text-gray-700"
 				>Password :</label
@@ -64,6 +79,9 @@
 				placeholder="Enter your password here..."
 			/>
 		</div>
+		<!-- end - password -->
+
+		<!-- start - submit button -->
 		<button
 			type="submit"
 			id="formButton"
@@ -72,6 +90,9 @@
 		>
 			Sign up
 		</button>
+		<!-- end - submit button -->
+
+		<!-- start - login link -->
 		<p class="text-gray-800 mt-6 text-center">
 			Have an account?
 			<a
@@ -80,5 +101,7 @@
 				>Login</a
 			>
 		</p>
+		<!-- end - login link -->
 	</form>
+	<!-- end - form -->
 </div>

@@ -1,9 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-/* jika membuka halaman utama auth, maka alihkan ke halaman login */
+/**
+ * Karena kita tidak memiliki views untuk /auth,
+ * jadi jika ada user yang mengakses url tersebut
+ * akan otomatis di redirect ke halaman login
+ */
 router.get('/', (req, res, next) => {
-  res.redirect('/login')
+	res.redirect('/login')
 })
 
 module.exports = router
