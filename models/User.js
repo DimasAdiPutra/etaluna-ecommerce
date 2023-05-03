@@ -1,3 +1,4 @@
+const validator = require('validator')
 const mongoose = require('mongoose')
 const connectDB = require('../configs/db')
 
@@ -7,22 +8,70 @@ connectDB()
 // Mpngodb schema dengan mongoose yang berfunsi untuk membuat dokumen yang akan disimpan di database
 const UserSchema = new mongoose.Schema(
 	{
-		name: {
+		firstName: {
 			type: String,
 			required: true,
+		},
+		lastName: {
+			type: String,
 		},
 		email: {
 			type: String,
 			required: true,
-			unique: true,
+			unique: [true, 'Your email is registered.'],
+			validate: {
+				validator: validator.isEmail,
+				message: 'Invalid email. Please enter a valid email.',
+			},
+		},
+		password: {
+			type: String,
+			required: true,
+			validate: {
+				validator: (value) =>
+					/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(value),
+				message: () =>
+					`Password is too weak. It must be at least 8 characters long and include an uppercase letter, a lowercase letter and a number.`,
+			},
+		},
+		admin: {
+			type: Boolean,
+			required: true,
 		},
 		phone: {
 			type: String,
-			required: true,
 		},
-		age: {
+		birth: {
 			type: Number,
-			required: true,
+		},
+		profile: {
+			type: String,
+		},
+		address: {
+			street: {
+				type: String,
+				trim: true,
+			},
+			homeNumber: {
+				type: String,
+				trim: true,
+			},
+			city: {
+				type: String,
+				trim: true,
+			},
+			subdistrict: {
+				type: String,
+				trim: true,
+			},
+			state: {
+				type: String,
+				trim: true,
+			},
+			zip: {
+				type: String,
+				trim: true,
+			},
 		},
 	},
 	{

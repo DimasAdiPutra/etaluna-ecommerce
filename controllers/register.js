@@ -1,3 +1,5 @@
+const { addUser } = require('../utilities/user')
+
 /**
  * Fungsi getRegister digunakan sebagai controller untuk mengambil halaman register.
  * @param req - berfungsi untuk menerima request user.
@@ -16,4 +18,12 @@ const getRegister = (req, res, next) => {
 	})
 }
 
-module.exports = { getRegister }
+const postRegister = (req, res, next) => {
+	let { firstName, lastName, email, password } = req.body
+
+	addUser(req.body)
+
+	res.json(req.body)
+}
+
+module.exports = { getRegister, postRegister }

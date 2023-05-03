@@ -15,6 +15,7 @@ const connectDB = async () => {
 			useNewUrlParser: true,
 			connectTimeoutMS: 10000,
 		})
+		await mongoose.connection.useDb(process.env.DB_NAME)
 		console.log('Database connected')
 	} catch (err) {
 		console.log(
