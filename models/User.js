@@ -37,6 +37,7 @@ const UserSchema = new mongoose.Schema(
 		admin: {
 			type: Boolean,
 			required: true,
+			default: 0,
 		},
 		phone: {
 			type: String,
