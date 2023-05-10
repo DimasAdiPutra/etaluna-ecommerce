@@ -1,4 +1,3 @@
-const validator = require('validator')
 const mongoose = require('mongoose')
 const connectDB = require('../configs/db')
 
@@ -19,10 +18,6 @@ const UserSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 			unique: [true, 'Your email is registered.'],
-			validate: {
-				validator: validator.isEmail,
-				message: 'Invalid email. Please enter a valid email.',
-			},
 		},
 		password: {
 			type: String,

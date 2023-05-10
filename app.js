@@ -9,6 +9,8 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const cors = require('cors')
+const session = require('express-session')
+const flash = require('connect-flash')
 const compression = require('compression')
 
 // me-require semua router yang digunakan
@@ -35,7 +37,18 @@ app.use(logger('dev'))
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(cookieParser())
+
+// Set Cookie, Session, dan Flash
+app.use(cookieParser(process.env.SECRET))
+app.use(
+	session({
+		secret: process.env.SECRET,
+		resave: false,
+		saveUninitialized: true,
+		cookie: { secure: true },
+	})
+)
+app.use(flash())
 
 // path untuk folder yang menyimpan file static
 app.use(express.static(path.join(__dirname, 'public')))

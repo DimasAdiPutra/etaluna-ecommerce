@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator')
 const { addUser } = require('../utilities/user')
 
 /**
@@ -11,15 +12,34 @@ const { addUser } = require('../utilities/user')
  * res disini akan merender views register yang ada di dalam folder auth, dengan mengirimkan data object untuk digunakan di dalam views
  */
 const getRegister = (req, res, next) => {
+	const errors = req.flash('errors')
+
+	const falseInput = req.session.falseInput || {}
+
+	req.session.falseInput = null
+
 	res.render('auth/register', {
 		title: 'Register Page',
 		currentPage: req.currentPage,
 		mode: req.mode,
+		errors,
+		falseInput,
 	})
 }
 
 const postRegister = (req, res, next) => {
-	let { firstName, lastName, email, password } = req.body
+	/**
+	 * Validation schema
+	 */
+	const errors = validationResult(req)
+
+	if (!errors.isEmpty()) {
+		req.flash('errors', errors.array())
+
+		req.session.falseInput = req.body
+
+		return res.redirect('/register')
+	}
 
 	addUser(req.body)
 
