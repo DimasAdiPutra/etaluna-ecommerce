@@ -6,4 +6,4 @@ require('./styles/tailwind.css')
 
 // require js
 require('./javascripts/main')
-require('./javascripts/form')
+// require('./javascripts/form')

@@ -12,6 +12,23 @@
 		<!-- title -->
 		<h1 class="mb-6 text-4xl">Register Page</h1>
 
+		<!-- Checks errors -->
+		<% if (typeof errors !== undefined && typeof errors !== null &&
+		errors.length > 0) { %>
+		<div class="mb-4">
+			<div
+				class="text-white bg-danger flex justify-between rounded-md py-1 px-2 mb-2"
+				role="alertdialog"
+				aria-roledescription="Alert for error validation"
+			>
+				<p><%= errors[0].msg %></p>
+				<button class="text-white flex">
+					<i data-feather="x-circle" class="cursor-pointer stroke-white"></i>
+				</button>
+			</div>
+		</div>
+		<% } %>
+
 		<!-- start - name -->
 		<div class="xl:flex xl:gap-2">
 			<!-- start - first name -->

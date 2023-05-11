@@ -47,7 +47,7 @@ const postRegister = (req, res, next) => {
 		req.session.save(() => {
 			res.redirect('/register')
 		})
-		console.log([req.flash, req.session])
+		// console.log([req.flash, req.session])
 
 		return false
 	}
