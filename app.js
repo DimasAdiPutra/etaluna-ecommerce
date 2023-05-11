@@ -43,9 +43,9 @@ app.use(cookieParser(process.env.SECRET))
 app.use(
 	session({
 		secret: process.env.SECRET,
-		resave: false,
+		resave: true,
 		saveUninitialized: true,
-		cookie: { secure: true },
+		cookie: { secure: process.env.NODE_ENV === 'production' },
 	})
 )
 app.use(flash())
