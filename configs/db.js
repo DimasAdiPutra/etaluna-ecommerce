@@ -13,9 +13,11 @@ const connectDB = async () => {
 	try {
 		await mongoose.connect(process.env.MONGO_URI, {
 			useNewUrlParser: true,
+			useUnifiedTopology: true,
 			connectTimeoutMS: 10000,
+			dbName: process.env.DB_NAME,
 		})
-		console.log('Database connected')
+		console.log('Database connected!')
 	} catch (err) {
 		console.log(
 			process.env.NODE_ENV === 'production' ? 'Database connection failed' : err
