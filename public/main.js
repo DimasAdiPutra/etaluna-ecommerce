@@ -36,17 +36,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// require images\r\n__webpack_require__(/*! ./images/errors/back-home.svg */ \"./src/images/errors/back-home.svg\")\r\n\r\n// require css\r\n__webpack_require__(/*! ./styles/tailwind.css */ \"./src/styles/tailwind.css\")\r\n\r\n// require js\r\n__webpack_require__(/*! ./javascripts/main */ \"./src/javascripts/main.js\")\r\n// require('./javascripts/form')\r\n\n\n//# sourceURL=webpack://etaluna-ecommerce/./src/index.js?");
+eval("// require images\r\n__webpack_require__(/*! ./images/errors/back-home.svg */ \"./src/images/errors/back-home.svg\")\r\n\r\n// require css\r\n__webpack_require__(/*! ./styles/tailwind.css */ \"./src/styles/tailwind.css\")\r\n\r\n//* require js\r\n/**\r\n * @import feather-icons\r\n */\r\nconst feather = __webpack_require__(/*! feather-icons */ \"./node_modules/feather-icons/dist/feather.js\")\r\n\r\n// Menjalankan feather icons\r\nfeather.replace({\r\n\tclass: 'icons',\r\n\t// color: '#1B1B1B',\r\n\t// width: '16px',\r\n})\r\n\r\n__webpack_require__(/*! ./javascripts/nav */ \"./src/javascripts/nav.js\")\r\n__webpack_require__(/*! ./javascripts/dialog */ \"./src/javascripts/dialog.js\")\r\n// require('./javascripts/form')\r\n\n\n//# sourceURL=webpack://etaluna-ecommerce/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/javascripts/main.js":
-/*!*********************************!*\
-  !*** ./src/javascripts/main.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "./src/javascripts/dialog.js":
+/*!***********************************!*\
+  !*** ./src/javascripts/dialog.js ***!
+  \***********************************/
+/***/ (() => {
 
-eval("/**\r\n * @import feather-icons\r\n */\r\nconst feather = __webpack_require__(/*! feather-icons */ \"./node_modules/feather-icons/dist/feather.js\")\r\n\r\n/**\r\n * @const button - mengambil element dengan id 'nav-button'\r\n * @const nav - mengambil element dengan id 'nav-menu'\r\n * @const navChildren - mengambil semua element input yang ada di dalam const nav\r\n */\r\nconst button = document.getElementById('nav-button')\r\nconst nav = document.getElementById('nav-menu')\r\n\r\nconst navChildren = nav.querySelectorAll('a, input')\r\n\r\n/**\r\n * @event click - ketika const button di click atau element nav-button di click maka akan mengecek atribut aria-expanded\r\n * @atribute aria-expanded = true / false\r\n * @bool true = nav-menu di tampilkan\r\n * @bool false = nav-menu di sembunyikan\r\n */\r\nbutton.addEventListener('click', () => {\r\n\tif (button.ariaExpanded == 'true') {\r\n\t\tbutton.ariaExpanded = 'false'\r\n\t\tnav.classList.remove('show')\r\n\t\tfor (const child of navChildren) {\r\n\t\t\tchild.setAttribute('tabindex', '-1')\r\n\t\t}\r\n\t} else if (button.ariaExpanded == 'false') {\r\n\t\tbutton.ariaExpanded = 'true'\r\n\t\tnav.classList.add('show')\r\n\t\tfor (const child of navChildren) {\r\n\t\t\tchild.removeAttribute('tabindex')\r\n\t\t}\r\n\t}\r\n})\r\n\r\n/**\r\n * @event focusin - ketika menekan tab dan focus ke area diluar nav-menu maka nav-menu akan tertutup\r\n */\r\ndocument.addEventListener('focusin', (e) => {\r\n\tif (e.target !== nav && !nav.contains(e.target) && e.target !== button) {\r\n\t\tbutton.ariaExpanded = 'false'\r\n\t\tnav.classList.remove('show')\r\n\t\tfor (const child of navChildren) {\r\n\t\t\tchild.setAttribute('tabindex', '-1')\r\n\t\t}\r\n\t}\r\n})\r\n\r\n// Menjalankan feather icons\r\nfeather.replace({\r\n\tclass: 'icons',\r\n\t// color: '#1B1B1B',\r\n\t// width: '16px',\r\n})\r\n\n\n//# sourceURL=webpack://etaluna-ecommerce/./src/javascripts/main.js?");
+eval("const error = document.getElementById('error')\r\nconst closeError = document.getElementById('closeError')\r\n\r\nif (error) {\r\n\tcloseError.addEventListener('click', (e) => {\r\n\t\te.preventDefault()\r\n\t\terror.classList.add('hidden')\r\n\t})\r\n}\r\n\n\n//# sourceURL=webpack://etaluna-ecommerce/./src/javascripts/dialog.js?");
+
+/***/ }),
+
+/***/ "./src/javascripts/nav.js":
+/*!********************************!*\
+  !*** ./src/javascripts/nav.js ***!
+  \********************************/
+/***/ (() => {
+
+eval("/**\r\n * @const button - mengambil element dengan id 'nav-button'\r\n * @const nav - mengambil element dengan id 'nav-menu'\r\n * @const navChildren - mengambil semua element input yang ada di dalam const nav\r\n */\r\nconst button = document.getElementById('nav-button')\r\nconst nav = document.getElementById('nav-menu')\r\n\r\nconst navChildren = nav.querySelectorAll('a, input')\r\n\r\n/**\r\n * @event click - ketika const button di click atau element nav-button di click maka akan mengecek atribut aria-expanded\r\n * @atribute aria-expanded = true / false\r\n * @bool true = nav-menu di tampilkan\r\n * @bool false = nav-menu di sembunyikan\r\n */\r\nbutton.addEventListener('click', () => {\r\n\tif (button.ariaExpanded == 'true') {\r\n\t\tbutton.ariaExpanded = 'false'\r\n\t\tnav.classList.remove('show')\r\n\t\tfor (const child of navChildren) {\r\n\t\t\tchild.setAttribute('tabindex', '-1')\r\n\t\t}\r\n\t} else if (button.ariaExpanded == 'false') {\r\n\t\tbutton.ariaExpanded = 'true'\r\n\t\tnav.classList.add('show')\r\n\t\tfor (const child of navChildren) {\r\n\t\t\tchild.removeAttribute('tabindex')\r\n\t\t}\r\n\t}\r\n})\r\n\r\n/**\r\n * @event focusin - ketika menekan tab dan focus ke area diluar nav-menu maka nav-menu akan tertutup\r\n */\r\ndocument.addEventListener('focusin', (e) => {\r\n\tif (e.target !== nav && !nav.contains(e.target) && e.target !== button) {\r\n\t\tbutton.ariaExpanded = 'false'\r\n\t\tnav.classList.remove('show')\r\n\t\tfor (const child of navChildren) {\r\n\t\t\tchild.setAttribute('tabindex', '-1')\r\n\t\t}\r\n\t}\r\n})\r\n\n\n//# sourceURL=webpack://etaluna-ecommerce/./src/javascripts/nav.js?");
 
 /***/ }),
 

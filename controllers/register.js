@@ -18,12 +18,6 @@ const getRegister = (req, res, next) => {
 
 	req.session.falseInput = null
 
-	// console.log(errors)
-	// console.log(falseInput)
-
-	console.log([errors, falseInput])
-	console.log('=============================================')
-	console.log(req.session)
 	res.render('auth/register', {
 		title: 'Register Page',
 		currentPage: req.currentPage,
@@ -47,7 +41,6 @@ const postRegister = (req, res, next) => {
 		req.session.save(() => {
 			res.redirect('/register')
 		})
-		// console.log([req.flash, req.session])
 
 		return false
 	}

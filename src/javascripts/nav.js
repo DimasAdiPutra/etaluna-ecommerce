@@ -1,9 +1,4 @@
 /**
- * @import feather-icons
- */
-const feather = require('feather-icons')
-
-/**
  * @const button - mengambil element dengan id 'nav-button'
  * @const nav - mengambil element dengan id 'nav-menu'
  * @const navChildren - mengambil semua element input yang ada di dalam const nav
@@ -46,11 +41,4 @@ document.addEventListener('focusin', (e) => {
 			child.setAttribute('tabindex', '-1')
 		}
 	}
-})
-
-// Menjalankan feather icons
-feather.replace({
-	class: 'icons',
-	// color: '#1B1B1B',
-	// width: '16px',
 })
