@@ -1,4 +1,6 @@
+// require hasil validasi
 const { validationResult } = require('express-validator')
+// require fungsi utilities untuk menambahkan user
 const { addUser } = require('../utilities/user')
 
 /**

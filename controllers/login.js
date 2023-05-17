@@ -1,3 +1,8 @@
+// require validation result
+const { validationResult } = require('express-validator')
+// require fungsi utilities find user by email
+const { findUserByEmail } = require('../utilities/user')
+
 /**
  * Fungsi getLogin digunakan sebagai controller untuk mengambil halaman login.
  * @param req - berfungsi untuk menerima request user.
@@ -16,4 +21,27 @@ const getLogin = (req, res, next) => {
 	})
 }
 
-module.exports = { getLogin }
+const postLogin = async (req, res, next) => {
+	/**
+	 * Validation schema
+	 */
+	const errors = validationResult(req)
+
+	if (!errors.isEmpty()) {
+		req.flash('errors', errors.array())
+
+		req.session.falseInput = req.body
+
+		req.session.save(() => {
+			res.redirect('/login')
+		})
+
+		return false
+	}
+
+	const user = await findUserByEmail(req.body.email)
+
+	res.json(user)
+}
+
+module.exports = { getLogin, postLogin }

@@ -1,6 +1,6 @@
 const { checkSchema } = require('express-validator')
 
-const userSchemaValidation = checkSchema({
+const registerValidation = checkSchema({
 	firstName: {
 		notEmpty: {
 			errorMessage: 'First Name is required.',
@@ -33,4 +33,4 @@ const userSchemaValidation = checkSchema({
 	},
 })
 
-module.exports = userSchemaValidation
+module.exports = registerValidation
