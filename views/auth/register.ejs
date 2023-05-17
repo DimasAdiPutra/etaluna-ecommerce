@@ -50,6 +50,7 @@
 					name="firstName"
 					aria-describedby="FirstName"
 					placeholder="Your first name here..."
+					value="<%= falseInput.firstName ? falseInput.firstName : '' %>"
 				/>
 			</div>
 			<!-- end - first name -->
@@ -66,6 +67,7 @@
 					name="lastName"
 					aria-describedby="LastName"
 					placeholder="Your last name here... (opsional)"
+					value="<%= falseInput.lastName ? falseInput.lastName : '' %>"
 				/>
 			</div>
 			<!-- end - last name -->
@@ -84,6 +86,7 @@
 				name="email"
 				aria-describedby="emailHelp"
 				placeholder="example@example.com"
+				value="<%= falseInput.email ? falseInput.email : '' %>"
 			/>
 		</div>
 		<!-- end - email -->

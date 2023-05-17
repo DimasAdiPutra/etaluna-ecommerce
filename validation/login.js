@@ -16,11 +16,6 @@ const loginValidation = checkSchema({
 		notEmpty: {
 			errorMessage: 'Password is required.',
 		},
-		matches: {
-			options: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-			errorMessage:
-				'Password is too weak. It must be at least 8 characters long and include an uppercase letter, a lowercase letter and a number.',
-		},
 		trim: true,
 		escape: true,
 	},
