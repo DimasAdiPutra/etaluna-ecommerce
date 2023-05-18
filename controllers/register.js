@@ -1,5 +1,6 @@
-const { validationResult } = require('express-validator')
-const { addUser } = require('../utilities/user')
+const { validationResult } = require('express-validator') // require hasil validasi
+const bcrypt = require('bcrypt') // require bcrypt untuk mengenkripsi password
+const { addUser } = require('../utilities/user') // require fungsi utilities untuk menambahkan user
 
 /**
  * Fungsi getRegister digunakan sebagai controller untuk mengambil halaman register.
@@ -27,7 +28,7 @@ const getRegister = (req, res, next) => {
 	})
 }
 
-const postRegister = (req, res, next) => {
+const postRegister = async (req, res, next) => {
 	/**
 	 * Validation schema
 	 */
@@ -45,9 +46,15 @@ const postRegister = (req, res, next) => {
 		return false
 	}
 
-	addUser(req.body)
+	const user = { ...req.body }
+	const saltRounds = 12
 
-	res.json(req.body)
+	const hash = await bcrypt.hash(user.password, saltRounds)
+	user.password = hash
+	addUser(user)
+
+	console.log('sukses insert!')
+	res.redirect('/login')
 }
 
 module.exports = { getRegister, postRegister }

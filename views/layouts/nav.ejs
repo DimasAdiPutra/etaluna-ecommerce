@@ -15,10 +15,10 @@
 		<!-- end - nav button -->
 
 		<!-- start - nav menu -->
-		<div id="nav-menu" class="xl:flex whitespace-nowrap absolute xl:static bg-primary xl:bg-opacity-0 w-11/12 xl:w-3/4 max-w-0 xl:max-w-none min-h-screen xl:min-h-0 top-0 right-0 pl-0 pt-24 xl:pt-0 nav_shadow xl:shadow-none overflow-hidden transition-all duration-500 xl:justify-between xl:items-center xl:gap-4" role="menu" aria-labelledby="nav-button">
+		<div id="nav-menu" class="xl:flex whitespace-nowrap absolute xl:static bg-primary xl:bg-opacity-0 w-11/12 xl:w-3/4 max-w-0 xl:max-w-none min-h-screen xl:min-h-0 top-0 right-0 pl-0 pt-24 xl:pt-0 nav_shadow xl:shadow-none overflow-hidden transition-all duration-500 xl:justify-between xl:items-center xl:gap-4" aria-labelledby="nav-button">
 			
 			<!-- start - nav links -->
-			<div class="w-full xl:max-w-md flex flex-col xl:flex-row justify-between gap-3 xl:gap-6 mb-4 xl:mb-0" tabindex="-1">
+			<div class="w-full xl:max-w-md flex flex-col xl:flex-row justify-between gap-3 xl:gap-6 mb-4 xl:mb-0" tabindex="-1" role="menu">
 				<a href="/" class="nav__link" role="menuitem" <%= currentPage === '' ? `aria-current="page"` : '' %> tabindex='-1'>Home</a>
 				<a href="/product" class="nav__link" role="menuitem" <%= currentPage === 'product' ? `aria-current="page"` : '' %> tabindex='-1'>Products</a>
 				<a href="/about" class="nav__link" role="menuitem" <%= currentPage === 'about' ? `aria-current="page"` : '' %> tabindex='-1'>About Us</a>
@@ -32,7 +32,7 @@
 				<!-- start - input search -->
 				<form action="/search" method="POST" class="relative rounded-md shadow-sm" tabindex="-1">
 					<input id="search" type="text" placeholder="search..." name="search" role="searchbox" class="form-input w-full focus:border-warning hover:border-warning border-2 pr-12 rounded-full transition duration-150 ease-in-out mr-0 text-black" tabindex="-1">
-					<button type="submit" class="absolute inset-y-0 right-0 px-3 rounded-r-full flex items-center cursor-pointer material-symbols-rounded text-black font-bold text-lg" tabindex="-1">
+					<button type="submit" class="absolute inset-y-0 right-0 px-3 rounded-r-full flex items-center cursor-pointer material-symbols-rounded text-black font-bold text-lg" tabindex="-1" aria-label="search">
 						<i data-feather="search" class="opacity-50 cursor-pointer"></i>
 					</button>
 				</form>
