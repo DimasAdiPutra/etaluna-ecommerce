@@ -9,10 +9,12 @@ const findUserByEmail = async (email) => {
 
 // Menambahkan data user baru
 const addUser = async (data) => {
-	new User(data)
-		.save()
-		.then((data) => console.log(data))
-		.catch((err) => console.log(err))
+	try {
+		await new User(data).save()
+		return { success: true, message: 'Registrasi-Berhasil!', code: 0 }
+	} catch (error) {
+		return { success: false, message: error.message, code: error.code }
+	}
 }
 
 module.exports = { findUserByEmail, addUser }

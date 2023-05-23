@@ -13,18 +13,23 @@ const { findUserByEmail } = require('../utilities/user') // require fungsi utili
  * res disini akan merender views login yang ada di dalam folder auth, dengan mengirimkan data object untuk digunakan di dalam views
  */
 const getLogin = (req, res, next) => {
-	const errors = req.flash('errors')
+	const errors = req.flash('errors') // mengambil pesan errors di flash
 
-	const falseInput = req.session.falseInput || {}
+	const falseInput = req.session.falseInput || {} // mengambil data false input di session
 
 	req.session.falseInput = null
+
+	const success = req.flash('success')[0] // mengambil pesan success
+
+	console.log(success)
 
 	res.render('auth/login', {
 		title: 'Login Page',
 		currentPage: req.currentPage,
 		mode: req.mode,
-		errors,
-		falseInput,
+		errors, // mengirim error ke views
+		falseInput, // mengirim data false input ke views
+		success, // mengirim pesan success ke views
 	})
 }
 
@@ -83,13 +88,13 @@ const postLogin = async (req, res, next) => {
 		return false
 	}
 
-	// req.session.user = user[0]
+	req.flash('success', 'Login-Berhasil!')
 
-	// req.session.save(() => {
-	// 	res.redirect('/')
-	// })
+	req.session.user = user[0]
 
-	res.json(user)
+	req.session.save(() => {
+		res.redirect('/')
+	})
 }
 
 module.exports = { getLogin, postLogin }
