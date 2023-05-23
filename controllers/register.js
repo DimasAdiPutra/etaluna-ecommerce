@@ -1,5 +1,8 @@
+require('dotenv').config()
+
 const { validationResult } = require('express-validator') // require hasil validasi
 const bcrypt = require('bcrypt') // require bcrypt untuk mengenkripsi password
+
 const { addUser } = require('../utilities/user') // require fungsi utilities untuk menambahkan user
 
 /**
@@ -29,13 +32,10 @@ const getRegister = (req, res, next) => {
 }
 
 const postRegister = async (req, res, next) => {
-	/**
-	 * Validation schema
-	 */
-	const errors = validationResult(req)
+	const validation = validationResult(req) // jika validasi gagal ini akan terisi pesan validasi
 
-	if (!errors.isEmpty()) {
-		req.flash('errors', errors.array())
+	if (!validation.isEmpty()) {
+		req.flash('errors', validation)
 
 		req.session.falseInput = req.body
 
@@ -46,14 +46,42 @@ const postRegister = async (req, res, next) => {
 		return false
 	}
 
+	const errors = []
 	const user = { ...req.body }
 	const saltRounds = 12
 
-	const hash = await bcrypt.hash(user.password, saltRounds)
+	const hash = await bcrypt.hash(user.password, saltRounds) // enkripsi password
 	user.password = hash
-	addUser(user)
+	const result = await addUser(user) // menambahkan user ke database
 
-	console.log('sukses insert!')
+	if (!result.success) {
+		if (result.code === 11000) {
+			errors.push({ field: 'email', msg: 'Your email has been used.' })
+		} else {
+			errors.push({
+				field: 'database',
+				msg:
+					process.env.NODE_ENV === 'development'
+						? result.message
+						: 'Something went wrong, please try again later',
+			})
+		}
+	}
+
+	if (errors.length > 0) {
+		req.flash('errors', errors)
+
+		req.session.falseInput = req.body
+
+		req.session.save(() => {
+			res.redirect('/register')
+		})
+
+		return false
+	}
+
+	req.flash('success', result.message) // membuat flash message success
+
 	res.redirect('/login')
 }
 

@@ -27,7 +27,8 @@
     "http-errors": "~1.6.3",
     "just-validate": "^4.2.0",
     "mongoose": "^7.1.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "sweetalert2": "^11.4.8"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",

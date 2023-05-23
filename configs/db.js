@@ -15,7 +15,10 @@ const connectDB = async () => {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 			connectTimeoutMS: 10000,
-			dbName: process.env.DB_NAME,
+			dbName:
+				process.env.NODE_ENV === 'production'
+					? process.env.DB_NAME
+					: process.env.DB_TEST,
 		})
 		console.log('Database connected!')
 	} catch (err) {

@@ -9,10 +9,16 @@
  * res disini akan merender views home, dengan mengirimkan data object untuk digunakan di dalam views
  */
 const getHome = (req, res, next) => {
+	const success = req.flash('success')[0]
+
+	const user = req.session.user || {}
+
 	res.render('home', {
 		title: 'Home Page',
 		currentPage: req.currentPage,
 		mode: req.mode,
+		success,
+		user,
 	})
 }
 
