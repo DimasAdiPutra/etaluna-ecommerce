@@ -1609,59 +1609,49 @@ nav {
     padding-left: 1.5rem;
   }
 }
-
 .hover\:border-warning:hover {
   --tw-border-opacity: 1;
   border-color: rgba(242, 149, 68, 1);
   border-color: rgb(242 149 68 / var(--tw-border-opacity));
 }
-
 .hover\:bg-warning:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(242, 149, 68, 1);
   background-color: rgb(242 149 68 / var(--tw-bg-opacity));
 }
-
 .hover\:px-6:hover {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgba(242, 242, 242, 1);
   color: rgb(242 242 242 / var(--tw-text-opacity));
 }
-
 .focus\:border-warning:focus {
   --tw-border-opacity: 1;
   border-color: rgba(242, 149, 68, 1);
   border-color: rgb(242 149 68 / var(--tw-border-opacity));
 }
-
 .focus\:border-primary:focus {
   --tw-border-opacity: 1;
   border-color: rgba(57, 93, 115, 1);
   border-color: rgb(57 93 115 / var(--tw-border-opacity));
 }
-
 .focus\:bg-white:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(242, 242, 242, 1);
   background-color: rgb(242 242 242 / var(--tw-bg-opacity));
 }
-
 .focus\:text-black:focus {
   --tw-text-opacity: 1;
   color: rgba(30, 51, 64, 1);
   color: rgb(30 51 64 / var(--tw-text-opacity));
 }
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
 @media (min-width: 768px) {
 
   .md\:h-full-screen {
@@ -1690,7 +1680,6 @@ nav {
 			79px 70px 152px rgba(0, 0, 0, 0.05);
 	}
 }
-
 @media (min-width: 1280px) {
 
   .xl\:static {
@@ -1806,7 +1795,6 @@ nav {
     color: rgb(242 149 68 / var(--tw-text-opacity));
   }
 }
-
 @media (min-width: 375px) {
 
   .xs\:flex-row {

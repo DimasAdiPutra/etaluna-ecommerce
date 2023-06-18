@@ -16,6 +16,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const cors = require('cors')
 const session = require('express-session')
+const MongoStore = require('connect-mongo')
 const flash = require('connect-flash')
 const compression = require('compression')
 
@@ -57,6 +58,14 @@ app.use(
 			maxAge: 1000 * 60 * 60 * 24, // Session hilang setelah 1 hari
 			httpOnly: true,
 		},
+		store: MongoStore.create({
+			mongoUrl: process.env.MONGO_URI,
+			collection: 'sessions',
+			dbName:
+				process.env.NODE_ENV === 'production'
+					? process.env.DB_NAME
+					: process.env.DB_TEST,
+		}),
 	})
 )
 app.use(flash())
