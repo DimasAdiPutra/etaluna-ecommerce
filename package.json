@@ -25,6 +25,7 @@
     "express-validator": "^7.0.1",
     "feather-icons": "^4.29.0",
     "http-errors": "~1.6.3",
+    "jsonwebtoken": "^9.0.0",
     "just-validate": "^4.2.0",
     "mongoose": "^7.1.0",
     "morgan": "~1.9.1",

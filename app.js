@@ -1,3 +1,9 @@
+/**
+ * TODO::
+ * ? Test session apakah hilang dalam 1 menit
+ * ! Sekarang, saat user login dengan remember me, hanya akan membuat cookie dan tidak membuat session, dan jika tanpa remember me akan membuat session.
+ */
+
 // Menjalankan dotenv
 require('dotenv').config()
 
@@ -39,13 +45,18 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 // Set Cookie, Session, dan Flash
-app.use(cookieParser(process.env.SECRET))
+app.use(cookieParser(process.env.SESSION_SECRET))
 app.use(
 	session({
-		secret: process.env.SECRET,
+		secret: process.env.SESSION_SECRET,
 		resave: true,
 		saveUninitialized: true,
-		cookie: { secure: process.env.NODE_ENV === 'production' },
+		rolling: true, // Jika session masih di gunakan waktu expired akan di reset
+		cookie: {
+			secure: process.env.NODE_ENV === 'production',
+			maxAge: 1000 * 60 * 60 * 24, // Session hilang setelah 1 hari
+			httpOnly: true,
+		},
 	})
 )
 app.use(flash())

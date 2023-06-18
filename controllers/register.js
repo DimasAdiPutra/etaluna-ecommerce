@@ -50,6 +50,9 @@ const postRegister = async (req, res, next) => {
 	const user = { ...req.body }
 	const saltRounds = 12
 
+	// Menambahkan fullName
+	user.fullName = `${user.firstName} ${user.lastName}`
+
 	const hash = await bcrypt.hash(user.password, saltRounds) // enkripsi password
 	user.password = hash
 	const result = await addUser(user) // menambahkan user ke database
