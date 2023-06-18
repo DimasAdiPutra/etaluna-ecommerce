@@ -24,28 +24,28 @@
 
 	/* Button colors */
 	.button--primary {
-		@apply bg-primary;
+		@apply !bg-primary;
 	}
 
 	.button--danger {
-		@apply bg-danger;
+		@apply !bg-danger;
 	}
 
 	.button--warning {
-		@apply bg-warning;
+		@apply !bg-warning;
 	}
 
 	/* Button border no color */
 	.button--primary--border {
-		@apply outline outline-2 -outline-offset-2 outline-primary text-primary;
+		@apply outline outline-2 -outline-offset-2 !outline-primary text-primary;
 	}
 
 	.button--danger--border {
-		@apply outline outline-2 -outline-offset-2 outline-danger text-danger;
+		@apply outline outline-2 -outline-offset-2 !outline-danger text-danger;
 	}
 
 	.button--warning--border {
-		@apply outline outline-2 -outline-offset-2 outline-warning text-warning;
+		@apply outline outline-2 -outline-offset-2 !outline-warning text-warning;
 	}
 
 	.button--primary:hover,

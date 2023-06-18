@@ -1,4 +1,4 @@
-<div
+<main
 	class="container flex w-full justify-center md:h-full-screen md:items-center"
 >
 	<!-- start - form -->
@@ -6,11 +6,33 @@
 		id="mainForm"
 		class="flex flex-col w-full max-w-sm xl:max-w-md md:shadow-card pb-10 pt-8 px-6 md:rounded-lg"
 		method="post"
-		action="/auth/login"
+		action="/register"
 		novalidate
 	>
 		<!-- title -->
 		<h1 class="mb-6 text-4xl">Register Page</h1>
+
+		<!-- 
+			jika file javascript tidak bisa terload atau di nonaktifkan, maka validasi di front end akan menghilang, karena itu di tambahkan validasi juga di backend untuk mengecek inputan user sudah sesuai atau belum
+		-->
+		<% if (typeof errors !== undefined && typeof errors !== null &&
+		errors.length > 0) { %>
+		<div id="error" class="mb-4">
+			<div
+				class="text-white bg-danger flex justify-between rounded-md py-1 px-2 mb-2"
+				role="alertdialog"
+				aria-roledescription="Alert for error validation"
+			>
+				<p><%= errors[0].msg %></p>
+				<button
+					id="closeError"
+					class="text-white flex justify-start items-start"
+				>
+					<i data-feather="x-circle" class="cursor-pointer stroke-white"></i>
+				</button>
+			</div>
+		</div>
+		<% } %>
 
 		<!-- start - name -->
 		<div class="xl:flex xl:gap-2">
@@ -28,6 +50,7 @@
 					name="firstName"
 					aria-describedby="FirstName"
 					placeholder="Your first name here..."
+					value="<%= falseInput.firstName ? falseInput.firstName : '' %>"
 				/>
 			</div>
 			<!-- end - first name -->
@@ -44,6 +67,7 @@
 					name="lastName"
 					aria-describedby="LastName"
 					placeholder="Your last name here... (opsional)"
+					value="<%= falseInput.lastName ? falseInput.lastName : '' %>"
 				/>
 			</div>
 			<!-- end - last name -->
@@ -62,6 +86,7 @@
 				name="email"
 				aria-describedby="emailHelp"
 				placeholder="example@example.com"
+				value="<%= falseInput.email ? falseInput.email : '' %>"
 			/>
 		</div>
 		<!-- end - email -->
@@ -104,4 +129,4 @@
 		<!-- end - login link -->
 	</form>
 	<!-- end - form -->
-</div>
+</main>

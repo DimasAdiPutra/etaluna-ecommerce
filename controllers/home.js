@@ -1,3 +1,5 @@
+const verify = require('jsonwebtoken/verify')
+
 /**
  * Fungsi getHome digunakan sebagai controller untuk mengambil halaman home.
  * @param req - berfungsi untuk menerima request user.
@@ -9,10 +11,21 @@
  * res disini akan merender views home, dengan mengirimkan data object untuk digunakan di dalam views
  */
 const getHome = (req, res, next) => {
+	const success = req.flash('success')[0]
+
+	const token = req.session.token || req.cookies.token || ''
+
+	// Verifikasi token
+	const user = verify(token, process.env.TOKEN_SECRET, (err, decoded) =>
+		err ? err : decoded
+	)
+
 	res.render('home', {
 		title: 'Home Page',
 		currentPage: req.currentPage,
 		mode: req.mode,
+		success,
+		user,
 	})
 }
 
