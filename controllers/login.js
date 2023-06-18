@@ -1,5 +1,8 @@
+require('dotenv').config()
+
 const { validationResult } = require('express-validator') // require validation result
 const bcrypt = require('bcrypt') // require bcrypt untuk enkripsi password
+const jwt = require('jsonwebtoken') // require jsonwebtoken untuk mengirimkan token ke user
 const { findUserByEmail } = require('../utilities/user') // require fungsi utilities find user by email
 
 /**
@@ -21,8 +24,6 @@ const getLogin = (req, res, next) => {
 
 	const success = req.flash('success')[0] // mengambil pesan success
 
-	console.log(success)
-
 	res.render('auth/login', {
 		title: 'Login Page',
 		currentPage: req.currentPage,
@@ -37,14 +38,27 @@ const postLogin = async (req, res, next) => {
 	/**
 	 * Validation schema
 	 */
-	const errors = [...validationResult(req).array()]
+	const validation = validationResult(req)
 
+	if (!validation.isEmpty()) {
+		req.flash('errors', validation)
+
+		req.session.falseInput = req.body
+
+		req.session.save(() => {
+			res.redirect('/register')
+		})
+
+		return false
+	}
+
+	const errors = []
 	const user = await findUserByEmail(req.body.email)
 
 	if (user.length > 1) {
 		errors.push({
 			field: 'email',
-			msg: 'Your email has been used!',
+			msg: 'Your email is used on two different accounts. Please use your email on one account only.',
 		})
 		// return false
 	}
@@ -74,8 +88,6 @@ const postLogin = async (req, res, next) => {
 		}
 	}
 
-	console.log(errors)
-
 	if (errors.length > 0) {
 		req.flash('errors', errors)
 
@@ -90,7 +102,28 @@ const postLogin = async (req, res, next) => {
 
 	req.flash('success', 'Login-Berhasil!')
 
-	req.session.user = user[0]
+	const token = jwt.sign(
+		{
+			id: user[0]._id,
+			fullName: user[0].fullName,
+			firstName: user[0].firstName,
+			lastName: user[0].lastName,
+			email: user[0].email,
+			admin: user[0].admin,
+		},
+		process.env.TOKEN_SECRET
+	)
+
+	// Jika user memilih "remember me", simpan token di cookie
+	if (req.body.remember) {
+		res.cookie('token', token, {
+			maxAge: 1000 * 60 * 60 * 24 * 3,
+			httpOnly: true,
+			rolling: true,
+		}) // Expire setelah 3 hari
+	} else {
+		req.session.token = token
+	}
 
 	req.session.save(() => {
 		res.redirect('/')

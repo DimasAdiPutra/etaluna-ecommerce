@@ -7,6 +7,10 @@ connectDB()
 // Mpngodb schema dengan mongoose yang berfunsi untuk membuat dokumen yang akan disimpan di database
 const UserSchema = new mongoose.Schema(
 	{
+		fullName: {
+			type: String,
+			required: true,
+		},
 		firstName: {
 			type: String,
 			required: true,
