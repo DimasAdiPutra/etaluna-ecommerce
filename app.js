@@ -54,7 +54,6 @@ app.use(
 		saveUninitialized: true,
 		rolling: true, // Jika session masih di gunakan waktu expired akan di reset
 		cookie: {
-			secure: process.env.NODE_ENV === 'production',
 			maxAge: 1000 * 60 * 60 * 24, // Session hilang setelah 1 hari
 			httpOnly: true,
 		},
