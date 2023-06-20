@@ -1,9 +1,3 @@
-/**
- * TODO::
- * ? Test session apakah hilang dalam 1 menit
- * ! Sekarang, saat user login dengan remember me, hanya akan membuat cookie dan tidak membuat session, dan jika tanpa remember me akan membuat session.
- */
-
 // Menjalankan dotenv
 require('dotenv').config()
 
