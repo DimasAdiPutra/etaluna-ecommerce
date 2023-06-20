@@ -1,5 +1,5 @@
-// require images
-require('./images/errors/back-home.svg')
+// require semua image di folder images
+require.context('./images', true)
 
 // require css
 require('./styles/tailwind.css')

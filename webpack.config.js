@@ -71,6 +71,7 @@ const config = {
 				minimizer: [
 					// start - sharp
 					{
+						// `sharp` will handle all bitmap formats (JPG, PNG, GIF, ...)
 						implementation: ImageMinimizerPlugin.sharpMinify,
 						// start - option sharp
 						options: {
@@ -85,6 +86,7 @@ const config = {
 
 					// start - svgo
 					{
+						// `svgo` will handle vector images (SVG)
 						implementation: ImageMinimizerPlugin.svgoMinify,
 						// start - option svgo
 						options: {
@@ -98,7 +100,7 @@ const config = {
 								],
 							},
 						},
-						// end - svgo
+						// end - option svgo
 					},
 					// end - svgo
 				],

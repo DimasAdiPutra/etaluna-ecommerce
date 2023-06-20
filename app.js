@@ -1,3 +1,9 @@
+/**
+ * TODO:: Mengecilkan file image di src secara manual terlebih dahulu
+ * TODO:: Menjalankan npm run build untuk minimize image
+ * TODO:: Pull request terlebih dahulu jika sudah berhasil di minimize
+ */
+
 // Menjalankan dotenv
 require('dotenv').config()
 
