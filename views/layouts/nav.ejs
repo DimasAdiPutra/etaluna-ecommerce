@@ -1,8 +1,8 @@
 <nav class="text-white sticky top-0 bg-primary">
-	
+
 	<!-- start - container -->
 	<div class="container min-h-[80px] flex justify-between items-center mx-auto py-3 xl:gap-6">
-		
+
 		<!-- logo -->
 		<a href="/" class="logo">ETA<span class="text-white order-1">LUNA</span></a>
 
@@ -16,10 +16,10 @@
 
 		<!-- start - nav menu -->
 		<div id="nav-menu" class="xl:flex whitespace-nowrap absolute xl:static bg-primary xl:bg-opacity-0 w-11/12 xl:w-3/4 max-w-0 xl:max-w-none min-h-screen xl:min-h-0 top-0 right-0 pl-0 pt-24 xl:pt-0 nav_shadow xl:shadow-none overflow-hidden transition-all duration-500 xl:justify-between xl:items-center xl:gap-4" aria-labelledby="nav-button">
-			
+
 			<!-- start - nav links -->
 			<div class="w-full xl:max-w-md flex flex-col xl:flex-row justify-between gap-3 xl:gap-6 mb-4 xl:mb-0" tabindex="-1" role="menu">
-				<a href="/" class="nav__link" role="menuitem" <%= currentPage === '' ? `aria-current="page"` : '' %> tabindex='-1'>Home</a>
+				<a href="/" class="nav__link" role="menuitem" <%= currentPage === '' ? `aria-current="page"` : '' %> tabindex="-1">Home</a>
 				<a href="/product" class="nav__link" role="menuitem" <%= currentPage === 'product' ? `aria-current="page"` : '' %> tabindex='-1'>Products</a>
 				<a href="/about" class="nav__link" role="menuitem" <%= currentPage === 'about' ? `aria-current="page"` : '' %> tabindex='-1'>About Us</a>
 				<a href="/contact" class="nav__link" role="menuitem" <%= currentPage === 'contact' ? `aria-current="page"` : '' %> tabindex='-1'>Contact Us</a>
@@ -33,18 +33,33 @@
 				<form action="/search" method="POST" class="relative rounded-md shadow-sm" tabindex="-1">
 					<input id="search" type="text" placeholder="search..." name="search" role="searchbox" class="form-input w-full focus:border-warning hover:border-warning border-2 pr-12 rounded-full transition duration-150 ease-in-out mr-0 text-black" tabindex="-1">
 					<button type="submit" class="absolute inset-y-0 right-0 px-3 rounded-r-full flex items-center cursor-pointer material-symbols-rounded text-black font-bold text-lg" tabindex="-1" aria-label="search">
-						<i data-feather="search" class="opacity-50 cursor-pointer"></i>
+						<i data-feather="search" class="opacity-50 cursor-pointer">search</i>
 					</button>
 				</form>
 				<!-- end - input search -->
 
+				<% if (!user) { %>
 				<!-- start - button -->
 				<div class="flex max-w-[240px] justify-between gap-3 self-end xl:self-auto" tabindex="-1">
 					<a href="/login" class="button button--warning" tabindex="-1">Login</a>
 					<a href="/register" class="button button--warning--border" tabindex="-1">Register</a>
 				</div>
 				<!-- end button -->
-				
+				<% } else { %>
+				<div class="flex gap-4 justify-between items-center">
+					<a href="/user/cart">
+						<i data-feather="shopping-cart" class="stroke-white cursor-pointer w-6">cart</i>
+					</a>
+					<a href="/user/notification">
+						<i data-feather="bell" class="stroke-white cursor-pointer w-6">notification</i>
+					</a>
+					<button class="border-solid border-2 border-white w-8 h-8 flex justify-center items-center rounded-full" role="menu">
+						<i data-feather="user" class="stroke-white cursor-pointer w-6">profile</i>
+					</button>
+				</div>
+				<% } %>
+
+
 			</div>
 			<!-- end - right side -->
 

@@ -1,4 +1,5 @@
-const verify = require('jsonwebtoken/verify')
+// Merequire fungsi untuk mengambil session login jika sudah login
+const { verifySessionToken } = require('../utilities/common')
 
 /**
  * Fungsi getHome digunakan sebagai controller untuk mengambil halaman home.
@@ -15,10 +16,7 @@ const getHome = (req, res, next) => {
 
 	const token = req.session.token || req.cookies.token || ''
 
-	// Verifikasi token
-	const user = verify(token, process.env.TOKEN_SECRET, (err, decoded) =>
-		err ? err : decoded
-	)
+	const user = verifySessionToken(token)
 
 	res.render('home', {
 		title: 'Home Page',

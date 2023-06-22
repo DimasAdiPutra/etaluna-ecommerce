@@ -1221,6 +1221,9 @@ button[aria-expanded='false'] span:nth-child(3) {
 .h-1 {
   height: 0.25rem;
 }
+.h-8 {
+  height: 2rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1245,6 +1248,9 @@ button[aria-expanded='false'] span:nth-child(3) {
 }
 .w-11\/12 {
   width: 91.666667%;
+}
+.w-8 {
+  width: 2rem;
 }
 .w-5 {
   width: 1.25rem;
@@ -1296,6 +1302,9 @@ button[aria-expanded='false'] span:nth-child(3) {
 .gap-3 {
   gap: 0.75rem;
 }
+.gap-4 {
+  gap: 1rem;
+}
 .self-end {
   align-self: flex-end;
 }
@@ -1336,6 +1345,11 @@ button[aria-expanded='false'] span:nth-child(3) {
 }
 .border-none {
   border-style: none;
+}
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgba(242, 242, 242, 1);
+  border-color: rgb(242 242 242 / var(--tw-border-opacity));
 }
 .bg-danger {
   --tw-bg-opacity: 1;

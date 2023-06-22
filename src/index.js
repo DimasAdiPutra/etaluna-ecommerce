@@ -19,4 +19,4 @@ feather.replace({
 
 require('./javascripts/nav')
 require('./javascripts/dialog')
-// require('./javascripts/form')
+require('./javascripts/form')

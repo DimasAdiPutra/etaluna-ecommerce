@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator') // require hasil valid
 const bcrypt = require('bcrypt') // require bcrypt untuk mengenkripsi password
 
 const { addUser } = require('../utilities/user') // require fungsi utilities untuk menambahkan user
+const { verifySessionToken } = require('../utilities/common') // require fungsi untuk mengambil session login jika sudah login
 
 /**
  * Fungsi getRegister digunakan sebagai controller untuk mengambil halaman register.
@@ -22,12 +23,17 @@ const getRegister = (req, res, next) => {
 
 	req.session.falseInput = null
 
+	const token = req.session.token || req.cookies.token || ''
+
+	const user = verifySessionToken(token)
+
 	res.render('auth/register', {
 		title: 'Register Page',
 		currentPage: req.currentPage,
 		mode: req.mode,
 		errors,
 		falseInput,
+		user,
 	})
 }
 

@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator') // require validation 
 const bcrypt = require('bcrypt') // require bcrypt untuk enkripsi password
 const jwt = require('jsonwebtoken') // require jsonwebtoken untuk mengirimkan token ke user
 const { findUserByEmail } = require('../utilities/user') // require fungsi utilities find user by email
+const { verifySessionToken } = require('../utilities/common') // require fungsi untuk mengambil session login jika sudah login
 
 /**
  * Fungsi getLogin digunakan sebagai controller untuk mengambil halaman login.
@@ -24,6 +25,10 @@ const getLogin = (req, res, next) => {
 
 	const success = req.flash('success')[0] // mengambil pesan success
 
+	const token = req.session.token || req.cookies.token || ''
+
+	const user = verifySessionToken(token)
+
 	res.render('auth/login', {
 		title: 'Login Page',
 		currentPage: req.currentPage,
@@ -31,6 +36,7 @@ const getLogin = (req, res, next) => {
 		errors, // mengirim error ke views
 		falseInput, // mengirim data false input ke views
 		success, // mengirim pesan success ke views
+		user,
 	})
 }
 
