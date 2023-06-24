@@ -14,6 +14,21 @@ const MongoStore = require('connect-mongo')
 const flash = require('connect-flash')
 const compression = require('compression')
 
+/**
+ * TODO:: Isi menu untuk profile
+ * * Account
+ * * Settings
+ * * Log Out
+ * TODO:: Untuk versi desktop setelah login
+ * * Tambahkan floating menu ketika profile di klik
+ * TODO:: Untuk versi mobile setelah login
+ * * Button untuk login dan register di navbar di hilangkan
+ * * Tambahkan floating button di bawah kanan untuk profile, cart dan notif
+ * * Tambahkan floating count untuk cart dan notif
+ * ? Saat profile di klik akan ada layout untuk menampilkan menu dari profile - optional
+ * ? Jika tampilan di samsung z flip mencukupi untuk floating menu seperti versi desktop, gunakan floating menu
+ */
+
 // me-require semua router yang digunakan
 const homeRouter = require('./routes/home')
 const loginRouter = require('./routes/login')
