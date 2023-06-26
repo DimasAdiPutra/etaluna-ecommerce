@@ -1,14 +1,12 @@
 <main
-	class="container flex w-full justify-center md:h-full-screen md:items-center"
->
+	class="container flex w-full justify-center md:h-full-screen md:items-center">
 	<!-- start - form -->
 	<form
 		id="mainForm"
 		class="flex flex-col w-full max-w-sm xl:max-w-md md:shadow-card pb-10 pt-8 px-6 md:rounded-lg"
 		method="post"
 		action="/register"
-		novalidate
-	>
+		novalidate>
 		<!-- title -->
 		<h1 class="mb-6 text-4xl">Register Page</h1>
 
@@ -21,14 +19,13 @@
 			<div
 				class="text-white bg-danger flex justify-between rounded-md py-1 px-2 mb-2"
 				role="alertdialog"
-				aria-roledescription="Alert for error validation"
-			>
+				aria-roledescription="Alert for error validation">
 				<p><%= errors[0].msg %></p>
 				<button
 					id="closeError"
-					class="text-white flex justify-start items-start"
-				>
-					<i data-feather="x-circle" class="cursor-pointer stroke-white"></i>
+					class="text-white flex justify-start items-start">
+					<i
+						class="fa-regular fa-circle-xmark cursor-pointer text-white"></i>
 				</button>
 			</div>
 		</div>
@@ -50,8 +47,7 @@
 					name="firstName"
 					aria-describedby="FirstName"
 					placeholder="Your first name here..."
-					value="<%= falseInput.firstName ? falseInput.firstName : '' %>"
-				/>
+					value="<%= falseInput.firstName ? falseInput.firstName : '' %>" />
 			</div>
 			<!-- end - first name -->
 
@@ -67,8 +63,7 @@
 					name="lastName"
 					aria-describedby="LastName"
 					placeholder="Your last name here... (opsional)"
-					value="<%= falseInput.lastName ? falseInput.lastName : '' %>"
-				/>
+					value="<%= falseInput.lastName ? falseInput.lastName : '' %>" />
 			</div>
 			<!-- end - last name -->
 		</div>
@@ -86,8 +81,7 @@
 				name="email"
 				aria-describedby="emailHelp"
 				placeholder="example@example.com"
-				value="<%= falseInput.email ? falseInput.email : '' %>"
-			/>
+				value="<%= falseInput.email ? falseInput.email : '' %>" />
 		</div>
 		<!-- end - email -->
 
@@ -101,8 +95,7 @@
 				class="form__input form__input--border form__input--primary"
 				id="password"
 				name="password"
-				placeholder="Enter your password here..."
-			/>
+				placeholder="Enter your password here..." />
 		</div>
 		<!-- end - password -->
 
@@ -111,8 +104,7 @@
 			type="submit"
 			id="formButton"
 			class="button button--primary self-end"
-			data-just-validate-fallback-disabled="false"
-		>
+			data-just-validate-fallback-disabled="false">
 			Sign up
 		</button>
 		<!-- end - submit button -->
