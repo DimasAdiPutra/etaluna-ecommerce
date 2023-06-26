@@ -8,7 +8,13 @@
 	}
 
 	body {
-		@apply bg-white;
+		@apply bg-white min-h-screen;
+	}
+
+	main {
+		min-height: calc(
+			100vh - 120px - 131px
+		); /* Tinggi halaman web yang tampil - tinggi header - tinggi footer */
 	}
 
 	.icons {
@@ -19,20 +25,20 @@
 @layer components {
 	/* Button */
 	.button {
-		@apply flex gap-3 py-3 px-6 rounded w-fit text-white transition-colors duration-300 disabled:bg-black;
+		@apply flex gap-3 py-3 px-6 rounded w-fit text-white duration-300 disabled:bg-black;
 	}
 
 	/* Button colors */
 	.button--primary {
-		@apply !bg-primary;
+		@apply !bg-primary transition-opacity;
 	}
 
 	.button--danger {
-		@apply !bg-danger;
+		@apply !bg-danger transition-opacity;
 	}
 
 	.button--warning {
-		@apply !bg-warning;
+		@apply !bg-warning transition-opacity;
 	}
 
 	/* Button border no color */
@@ -51,7 +57,7 @@
 	.button--primary:hover,
 	.button--danger:hover,
 	.button--warning:hover {
-		@apply bg-opacity-75;
+		@apply !bg-opacity-75;
 	}
 
 	.button--primary--border:hover {
