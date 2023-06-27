@@ -1352,9 +1352,6 @@ button[aria-expanded='false'] span:nth-child(3) {
 .gap-3 {
   gap: 0.75rem;
 }
-.gap-4 {
-  gap: 1rem;
-}
 .self-end {
   align-self: flex-end;
 }
@@ -1534,13 +1531,13 @@ button[aria-expanded='false'] span:nth-child(3) {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .font-bold {
   font-weight: 700;
@@ -1791,6 +1788,10 @@ nav {
     align-items: center;
   }
 
+  .md\:\!justify-center {
+    justify-content: center !important;
+  }
+
   .md\:rounded-lg {
     border-radius: 0.5rem;
   }
@@ -1944,8 +1945,8 @@ nav {
     align-items: center;
   }
 
-  .xs\:justify-center {
-    justify-content: center;
+  .xs\:justify-start {
+    justify-content: flex-start;
   }
 
   .xs\:justify-between {
