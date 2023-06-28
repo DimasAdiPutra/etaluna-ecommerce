@@ -56,7 +56,17 @@ eval("var map = {\n\t\"./banners/banner (1).jpg\": \"./src/images/banners/banner
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// require semua image di folder images\r\n__webpack_require__(\"./src/images sync recursive ^\\\\.\\\\/.*$\")\r\n\r\n// require css\r\n__webpack_require__(/*! ./styles/tailwind.css */ \"./src/styles/tailwind.css\")\r\n\r\n//* require js\r\n__webpack_require__(/*! ./javascripts/nav */ \"./src/javascripts/nav.js\")\r\n__webpack_require__(/*! ./javascripts/dialog */ \"./src/javascripts/dialog.js\")\r\n__webpack_require__(/*! ./javascripts/form */ \"./src/javascripts/form.js\")\r\n\n\n//# sourceURL=webpack://etaluna-ecommerce/./src/index.js?");
+eval("// require semua image di folder images\r\n__webpack_require__(\"./src/images sync recursive ^\\\\.\\\\/.*$\")\r\n\r\n// require css\r\n__webpack_require__(/*! ./styles/tailwind.css */ \"./src/styles/tailwind.css\")\r\n\r\n//* require js\r\n__webpack_require__(/*! ./javascripts/common */ \"./src/javascripts/common.js\")\r\n__webpack_require__(/*! ./javascripts/nav */ \"./src/javascripts/nav.js\")\r\n__webpack_require__(/*! ./javascripts/dialog */ \"./src/javascripts/dialog.js\")\r\n__webpack_require__(/*! ./javascripts/form */ \"./src/javascripts/form.js\")\r\n\n\n//# sourceURL=webpack://etaluna-ecommerce/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/javascripts/common.js":
+/*!***********************************!*\
+  !*** ./src/javascripts/common.js ***!
+  \***********************************/
+/***/ (() => {
+
+eval("window.addEventListener('DOMContentLoaded', function () {\r\n\tconst headerHeight = document.querySelector('header').offsetHeight\r\n\tconst footerHeight = document.querySelector('footer').offsetHeight\r\n\tconst mainElement = document.querySelector('main')\r\n\r\n\tconst windowHeight = window.innerHeight\r\n\tconst mainHeight = windowHeight - headerHeight - footerHeight\r\n\r\n\tmainElement.style.minHeight = mainHeight + 'px'\r\n})\r\n\n\n//# sourceURL=webpack://etaluna-ecommerce/./src/javascripts/common.js?");
 
 /***/ }),
 

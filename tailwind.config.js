@@ -60,7 +60,7 @@ module.exports = {
 
 			// new media queries
 			screens: {
-				xs: { min: '375px' },
+				xs: { min: '374px' },
 			},
 		},
 

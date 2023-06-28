@@ -12,13 +12,22 @@
 	}
 
 	main {
-		min-height: calc(
-			100vh - 120px - 131px
-		); /* Tinggi halaman web yang tampil - tinggi header - tinggi footer */
+		@apply min-h-[200vh];
 	}
 
 	.icons {
 		@apply w-5 text-black stroke-black;
+	}
+
+	.bottom-nav {
+		@apply rounded-t-[40%];
+		box-shadow: 0px 0px 6.4px rgba(0, 0, 0, 0.009),
+			0px 0px 13.2px rgba(0, 0, 0, 0.013), 0px 0px 22.1px rgba(0, 0, 0, 0.017),
+			0px 0px 36px rgba(0, 0, 0, 0.021), 0px 0px 71px rgba(0, 0, 0, 0.03);
+	}
+
+	.bottom-nav__link {
+		@apply text-black text-base xs:text-xl opacity-70 hover:opacity-100;
 	}
 }
 

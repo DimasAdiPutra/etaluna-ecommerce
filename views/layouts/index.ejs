@@ -17,7 +17,7 @@
 		<%- include('../partials/styles.ejs') %>
 	</head>
 
-	<body class="min-h-screen">
+	<body>
 		<header>
 			<!-- Menambahkan promosi utama -->
 			<%- include('promotion') %>
@@ -27,6 +27,9 @@
 
 		<!-- body dari setiap halaman -->
 		<%- body %>
+
+		<!-- Menambahkan bottom nav -->
+		<%- include('nav_bottom') %>
 
 		<!-- Menambahkan footer website -->
 		<%- include('footer') %>
